@@ -1,0 +1,16 @@
+/app/config/database.php
+
+/vendor/mpdf/
+/public/vendors/font-awesome/
+
+*.sql
+
+/writable/
+/writable/debugbar/
+/writable/logs/
+/writable/session/
+/writable/uploads/
+/writable/cache/
+
+/writable/debugbar/*.json
+

@@ -1,0 +1,120 @@
+table,div,th,tr,td {font-family: "Times New Roman", Times, serif;}
+
+/* .easyui-linkbutton {
+  width:90px;
+  background:#4AC09E;
+  color:white;
+} */
+
+/* tombol search - clear search - dan download XLS  17 Mar 2022 */
+.btnSearch:hover {
+  background-color: #4191e1;
+}
+
+.btnResetSearch:hover {
+  background-color: #e66f7b;
+}
+
+.btnDownloadXls:hover {
+  background-color: #34ce57;
+}
+/* batas tombol search - clear search - dan download XLS  17 Mar 2022 */
+
+.numberbox .textbox-text{
+  text-align: right;
+}
+
+.headcls .panel-title {
+  /* font-weight: bold; */
+  color:white;
+  background: #39C2C6;
+  border-color:#39C2C6;
+  height:30px;line-height:30px;font-size:14px;
+}
+
+/* Toolbar style (class bawaan easyui) */
+.datagrid-toolbar {
+  height: auto;
+  padding: 1px 2px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  background: #;
+}
+.datagrid-header,.datagrid-row,.datagrid-row-alt{font-family: "Times New Roman", Times, serif;}
+.datagrid-header {
+  font-weight: bold;
+}
+/* change background color first striped (class bawaan easyui)*/
+.datagrid-row{
+  background: white;
+  font-weight: ;
+}
+/* change background color second striped (class bawaan easyui)*/
+.datagrid-row-alt{
+  /* background: #fafafa;  */
+  background: #D4F1F4;
+  font-weight: ;
+}
+/* change color selected and hover data grid (class bawaan easyui)*/
+.datagrid-row-over td{
+  background:#D0E5F5;
+}
+.datagrid-row-selected td{
+  background:#FBEC88;
+  color:black;
+  font-weight: bold;
+}
+
+.textbox-readonly .textbox-text{background: #DCDCDC;}
+.text-forceup{text-transform: uppercase;}
+
+.dlgpop{width:62%;height:auto;padding:10px 20px;}
+
+@media (min-width: 320px) and (max-width: 480px) {
+.texthidden-mobp{display: none}
+.cols-crud-mobp{width:30%;float:left;margin-top:3.49px}
+ .icon-crud-mobp{width:30%;}
+.cols-search-mobp{width:70%;float:right;margin-top:3.49px}
+ .cg-search-mobp {width:68%;float:left;padding-right:3px}
+ .icon-cari-mobp{width:30%;float:left;}
+ .dlgpop-mobp{width:100%;height:auto;padding:10px 20px;}
+ .cssmobp-50{width:50%;}
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+.cols-crud-mobl{width:30%;float:left;margin-top:3.49px;}
+ .icon-crud-mobl{width:32%;}
+.cols-search-mobl{width:70%;float:right;margin-top:3.49px}
+ .cg-search-mobl {width:80%;float:left;padding-right:3px}
+ .icon-cari-mobl{width:12%;float:left;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 481px) and (max-width: 767px) {
+.texthidden-tabp{display: none}
+.cols-crud-tabp{width:30%;float:left;margin-top:3.49px}
+ .icon-crud-tabp{width:31%;}
+.cols-search-tabp{width:70%;float:right;margin-top:3.49px}
+ .icon-cari-tabp{width:12%;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 1024px) and (orientation: landscape) {
+.cols-crud-tabl{width:30%;float:left;margin-top:3.49px}
+ .icon-crud-tabl{width:31%;}
+.cols-search-tabl{width:70%;float:right;margin-top:3.49px}
+ .icon-cari-tabl{width:12%;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media (min-width: 992px) {
+.cols-crud{width:22%;float:left;margin-top:3.49px}
+ .icon-crud{width:32%;}
+.cols-search{width:78%;float:right;margin-top:3.49px}
+ .cg-search {width:88%;float:left;padding-right:3px}
+ .icon-cari{width:10%;float:left;}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}

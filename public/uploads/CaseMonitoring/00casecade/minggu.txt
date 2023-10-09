@@ -1,0 +1,10 @@
+review estate 
+- TAB BIAYA PANEN :
+	a) Nilai amount dibagi 1000 dan hilangkan angka belakang koma
+	b) Rp/Kg tetap pakai 2 angka belakang koma
+	c) untuk kutip brondolan perhatikan pembagi di element Rp/kg nya. harusnya seluruh kg nya bukan brondolan saja
+	d) cek untuk elemen biaya supervisi panen.
+	
+- TAB BIAYA TENAGA KERJA
+	a) untuk kegiatan LC tidak muncul luas dikerjakan karena dari rekap konsol agro sudah kosong karena hanya narik
+	b) budget 2016 keluarkan Norma Hk/Ha

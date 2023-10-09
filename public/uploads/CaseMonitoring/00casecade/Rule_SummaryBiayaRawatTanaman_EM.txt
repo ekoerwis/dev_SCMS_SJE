@@ -1,0 +1,87 @@
+['OUTLOOK','AMOUNT'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','AMOUNT')/1000
+			,STET);
+
+['OUTLOOK','RP_HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','RP_HA')
+			,STET);
+
+['OUTLOOK','NORMA HK/HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			IF(DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','LUAS') =0,0,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','HK') / 
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','LUAS'))
+			,STET);
+	
+			C:  IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			IF(DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','LUAS') =0,0,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','HK') / 
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','LUAS'))
+			,STET);
+
+
+['OUTLOOK','LUAS'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','LUAS')
+			,STET);
+
+['OUTLOOK','HK'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','HK')
+			,STET);
+
+['OUTLOOK','HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 1,
+			DB('SummaryBiayaRawatTanaman_EM_Hist',!BUDGETYEAR,!YEAR,!SITE,!AGEGROUP V2,!ACTIVITY,'OUTLOOK','HA')
+			,STET);
+		
+#=============================================================================================================
+
+
+#=============================================================================================================
+
+['BUDGET','AMOUNT'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0, 
+			DB('ReportPerawatan',!BUDGETYEAR,'VERSI 1',!ACTIVITY,!SITE,!AGEGROUP V2,'ALL TOPOGRAFI','KHT','AMT','ANNUAL BUDGET')
+			,STET);
+
+['BUDGET','HK'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			DB('ReportPerawatan',!BUDGETYEAR,'VERSI 1',!ACTIVITY,!SITE,!AGEGROUP V2,'ALL TOPOGRAFI','KHT','QTY','ANNUAL BUDGET')
+			,STET);
+
+
+['BUDGET','LUAS'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			DB('ReportPerawatan',!BUDGETYEAR,'VERSI 1',!ACTIVITY,!SITE,!AGEGROUP V2,'ALL TOPOGRAFI','KHT','LUAS','ANNUAL BUDGET')
+			,STET);
+
+
+['BUDGET','NORMA HK/HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			IF(['LUAS'] = 0,0,
+			['HK']/['LUAS'])
+			,STET);
+			 
+			C: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			IF(['LUAS'] = 0,0,
+			['HK']/['LUAS'])
+			,STET);
+
+
+['BUDGET','HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+		IF(['BUDGET','AMOUNT'] > 0,
+		DB('ReviewArealStatement',!BUDGETYEAR,!SITE,!AGEGROUP V2,'HECTPLANTED')
+		,0)
+		,STET);
+	
+		C: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+		DB('ReviewArealStatement',!BUDGETYEAR,!SITE,!AGEGROUP V2,'HECTPLANTED')
+		,STET);
+
+
+['BUDGET','RP_HA'] = N: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			IF(['HA'] = 0,0,
+			['AMOUNT']*1000/['HA'])
+			,STET);
+			 
+			C: IF(  NUMBR(!BUDGETYEAR) - NUMBR(!YEAR) = 0,
+			IF(['HA'] = 0,0,
+			['AMOUNT']*1000/['HA'])
+			,STET);
+
+
+
+

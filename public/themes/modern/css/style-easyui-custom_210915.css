@@ -1,0 +1,59 @@
+.panel-header,
+.panel-body {
+  border-color: #D3D3D3;
+  background-color: white;
+}
+/* Toolbar style (class bawaan easyui) */
+.datagrid-toolbar {
+  height: auto;
+  padding: 1px 2px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  background: black;
+}
+.datagrid-header,.datagrid-row,.datagrid-row-alt{font-family: "Times New Roman", Times, serif;}
+.datagrid-header {
+  font-weight: bold;
+}
+/* change background color first striped (class bawaan easyui)*/
+.datagrid-row{
+  background: white;
+  font-weight: ;
+}
+/* change background color second striped (class bawaan easyui)*/
+.datagrid-row-alt{
+  /* background: #fafafa;  */
+  background: #D4F1F4;
+  font-weight: ;
+}
+/* change color selected and hover data grid (class bawaan easyui)*/
+.datagrid-row-over td{
+  background:#D0E5F5;
+}
+.datagrid-row-selected td{
+  background:#FBEC88;
+  color:black;
+  font-weight: bold;
+}
+
+.textbox-readonly .textbox-text{background: #DCDCDC;}
+.text-forceup{text-transform: uppercase;}
+
+/* Merubah style di class easyui-panel di add edit form*/
+.headcls .panel-title{
+  font-weight: bold;
+  color:black;
+}
+/* Merubah style crud & search icon toolbar datagrid  */
+.tb-crud{width:20%}
+.tb-search{width:75%}
+.icon-crud{width:32%}
+.select-width{width:70.5%}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .texthidden-m{display: none}
+  .tb-crud-m{width:37.5%}
+  .tb-search-m{width:62%}
+  .icon-crud-m{width:auto}
+  .select-width-m{width:38.5%}
+}

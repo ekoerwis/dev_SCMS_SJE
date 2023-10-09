@@ -1,0 +1,37 @@
+.datagrid-row-alt{
+  background: #fafafa;
+}
+
+.textbox-readonly .textbox-text{
+  background: #DCDCDC;
+}
+
+.panel-header,
+.panel-body {
+  border-color: #D3D3D3;
+  background-color: white;
+}
+
+.datagrid-toolbar {
+  height: auto;
+  padding: 1px 2px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  background-color: white;
+}
+
+/* change color selected and hover data grid */
+.datagrid-row-over td{
+			background:#D0E5F5;
+		}
+.datagrid-row-selected td{
+			background:#FBEC88;
+      color:black;
+      font-weight: bold;
+		}
+/* Merubah style di class easyui-panel */
+.headcls .panel-title{
+  font-weight: bold;
+  color:black;
+  background: ;
+}

@@ -1,0 +1,10 @@
+{
+    "require": {
+        "mpdf/mpdf": "8.0.6",
+        "koolreport/codeigniter": "^1.8",
+        "codeitnowin/barcode": "^3.0",
+        "phpoffice/phpspreadsheet": "^1.21",
+        "koolreport/core": "^6.1",
+        "gasparesganga/php-shapefile": "^3.4"
+    }
+}

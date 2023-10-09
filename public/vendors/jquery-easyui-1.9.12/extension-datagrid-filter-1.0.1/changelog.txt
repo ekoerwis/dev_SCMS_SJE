@@ -1,0 +1,5 @@
+Version 1.0.x
+-------------
+
+* Bug
+ * Setting the 'prompt' property of a filter component may cause error result. fixed.
