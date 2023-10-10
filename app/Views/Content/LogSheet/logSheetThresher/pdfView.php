@@ -87,7 +87,7 @@
             <tr class="trHeadTable1">
                 <th rowspan="4" class="thTable1"  width="40px"><b>JAM</b></th>
                 <th class="thTable1" colspan="3"><b>THRESHER</b></th>
-                <th class="thTable1" colspan="16"><b>EMPTY BUNCH PRESS</b></th>
+                <th class="thTable1" colspan="19"><b>EMPTY BUNCH PRESS</b></th>
                 <!-- <th class="thTable1" rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
                 <!-- <th class="thTable1" rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
@@ -96,9 +96,10 @@
                 <th class="thTable1" rowspan="3" field="TMP2" width="45px"><b>USB</b></th>
                 <th class="thTable1" rowspan="3" field="VCM1" width="45px"><b>%</b></th>
                 <th class="thTable1" colspan="4" ><b>VOLT / AMPERE</b></th>
+                <th class="thTable1" rowspan="2" ><b>BAK LIQUOR</b></th>
                 <th class="thTable1" colspan="6" ><b>KONDISI GEAR BOX</b></th>
                 <th class="thTable1" colspan="2" ><b>POMPA</b></th>
-                <th class="thTable1" colspan="4" ><b>HM</b></th>
+                <th class="thTable1" colspan="6" ><b>HM</b></th>
             </tr>
             <tr class="trHeadTable1">
                 <th class="thTable1" rowspan="2" field="VCM2" width="45px"><b>EBP I</b></th>
@@ -111,8 +112,10 @@
                 <th class="thTable1" rowspan="2" field="CSTTMP5" width="45px"><b>NO. 2</b></th>
                 <th class="thTable1" colspan="2" ><b>EBP I</b></th>
                 <th class="thTable1" colspan="2" ><b>EBP II</b></th>
+                <th class="thTable1" colspan="2" ><b>BUNCH CRUISER</b></th>
             </tr>
             <tr class="trHeadTable1">
+                <th class="thTable1" field="THRLIQ_TP1" width="45px"><b>TEMP C</b></th>
                 <th class="thTable1" field="CSTTMP6" width="45px"><b>BAIK</b></th>
                 <th class="thTable1" field="CSTOLY1" width="45px"><b>NORMAL</b></th>
                 <th class="thTable1" field="CSTOLY2" width="45px"><b>KURANG</b></th>
@@ -121,6 +124,8 @@
                 <th class="thTable1" field="CSTOLY5" width="45px"><b>KURANG</b></th>
                 <th class="thTable1" field="CSTOLY6" width="45px"><b>START</b></th>
                 <th class="thTable1" field="SDTTMP1" width="45px"><b>STOP</b></th>
+                <th class="thTable1" field="SDTTMP2" width="45px"><b>START</b></th>
+                <th class="thTable1" field="SDTTMP3" width="45px"><b>STOP</b></th>
                 <th class="thTable1" field="SDTTMP2" width="45px"><b>START</b></th>
                 <th class="thTable1" field="SDTTMP3" width="45px"><b>STOP</b></th>
             </tr>
@@ -137,25 +142,28 @@
             ?>
             <tr>
                 <td class="tdTable1" ><?= $data_sql[$i]['TIME_DISP'] ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRSMP'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRUSB'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRPER'],2,".",",") ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THRSMP'] != 0) echo number_format($data_sql[$i]['THRSMP'],2,".",","); ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THRUSB'] != 0) echo number_format($data_sql[$i]['THRUSB'],2,".",","); ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THRPER'] != 0) echo number_format($data_sql[$i]['THRPER'],2,".",","); ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_V1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_A1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_V2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_A2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_GB2'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRLIQ_TP1'],2,".",",") ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 1) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 2) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 3) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 1) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 2) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 3) echo "V"; ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THRPMP1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THRPMP2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME2'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS2'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME2'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRBNC_HMS1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRBNC_HME1'],0,".",",") ?></td>
             </tr>
 <?php
             

@@ -28,18 +28,19 @@
         <thead>
             <tr>
                 <th colspan="3"><b>THRESHER</b></th>
-                <th colspan="16"><b>EMPTY BUNCH PRESS</b></th>
+                <th colspan="19"><b>EMPTY BUNCH PRESS</b></th>
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
             <tr>
-                <th rowspan="3" field="THRSMP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>SAMPLE</b></th>
-                <th rowspan="3" field="THRUSB" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>USB</b></th>
-                <th rowspan="3" field="THRPER" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>%</b></th>
+                <th rowspan="3" field="THRSMP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>SAMPLE</b></th>
+                <th rowspan="3" field="THRUSB" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>USB</b></th>
+                <th rowspan="3" field="THRPER" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>%</b></th>
                 <th colspan="4" ><b>VOLT / AMPERE</b></th>
+                <th rowspan="2" ><b>BAK LIQOUR</b></th>
                 <th colspan="6" ><b>KONDISI GEAR BOX</b></th>
                 <th colspan="2" ><b>POMPA</b></th>
-                <th colspan="4" ><b>HM</b></th>
+                <th colspan="6" ><b>HM</b></th>
             </tr>
             <tr>
                 <th rowspan="2" field="THREBP_V1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP I</b></th>
@@ -52,18 +53,22 @@
                 <th rowspan="2" field="THRPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 2</b></th>
                 <th colspan="2" ><b>EBP I</b></th>
                 <th colspan="2" ><b>EBP II</b></th>
+                <th colspan="2" ><b>BUNCH CRUISER</b></th>
             </tr>
             <tr>
-                <th field="THREBP_GB1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>BAIK</b></th>
-                <th field="THREBP_GB1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NORMAL</b></th>
-                <th field="THREBP_GB1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>KURANG</b></th>
-                <th field="THREBP_GB2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>BAIK</b></th>
-                <th field="THREBP_GB2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NORMAL</b></th>
-                <th field="THREBP_GB2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>KURANG</b></th>
-                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>START</b></th>
-                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>STOP</b></th>
-                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>START</b></th>
-                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>STOP</b></th>
+                <th field="THRLIQ_TP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>TEMP C</b></th>
+                <th field="THREBP_GB1_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
+                <th field="THREBP_GB1_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
+                <th field="THREBP_GB1_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
+                <th field="THREBP_GB2_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
+                <th field="THREBP_GB2_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
+                <th field="THREBP_GB2_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
+                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THRBNC_HMS1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THRBNC_HME1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
             </tr>
         </thead>
     </table>
@@ -102,8 +107,8 @@
 
             $('#cb-stationid').combobox({
                 valueField: 'ID',
-                textField: 'DESCRIPTION',
-                prompt:"Press ID",
+                textField: 'ID',
+                prompt:"THR ID",
                 required:true,
                 value:"1",
                 url: "<?php  echo site_url() . '/../Content/LogSheet/logSheetThresher/getStationID'; ?>",
@@ -213,6 +218,44 @@
             var returnVal ='';
             if(val != null){
                 returnVal = parseFloat(val).format(0, 3, ',', '.');
+            } 
+            return  returnVal;
+        }
+
+        function formatNumberColumnCostumNull(val,row){
+            // return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            var returnVal ='';
+            if(val != null){
+                if(val != 0){
+                    returnVal = parseFloat(val).format(0, 3, ',', '.');
+                }
+            } 
+            return  returnVal;
+        }
+
+        function gearBoxBaik(val,row){
+
+            var returnVal ='';
+            if(  Number(val) == 1 ){
+                returnVal = '<i class="fas fa-check"></i>';
+            } 
+            return  returnVal;
+        }
+
+        function gearBoxNormal(val,row){
+
+            var returnVal ='';
+            if( Number(val) == 2){
+                returnVal = '<i class="fas fa-check"></i>';
+            } 
+            return  returnVal;
+        }
+
+        function gearBoxKurang(val,row){
+
+            var returnVal ='';
+            if(Number(val) == 3){
+                returnVal = '<i class="fas fa-check"></i>';
             } 
             return  returnVal;
         }
