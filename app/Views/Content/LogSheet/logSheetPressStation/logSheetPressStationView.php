@@ -27,16 +27,29 @@
                     ">
         <thead>
             <tr>
+                <th colspan="5" rowspan="2"><b>DIGESTER MASS TEMP ( <span>&#176;</span>C )</b></th>
+                <th colspan="5" rowspan="2"><b>DIGESTER LOAD (AMP)</b></th>
+                <th colspan="5" rowspan="2"><b>PRESS CONE PRESSURE (BAR)</b></th>
+                <th colspan="24"><b>RUNNING HOUR</b></th>
+            </tr>
+            <tr>
                 <!-- <th rowspan="2" field="TIME_DISP"halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>JAM</b></th> -->
-                <th colspan="7"><b>DIGESTER MASS TEMP ( <span>&#176;</span>C )</b></th>
-                <th colspan="6"><b>DIGESTER LOAD (AMP)</b></th>
-                <th colspan="6"><b>PRESS CONE PRESSURE (BAR)</b></th>
+                <!-- <th colspan="5"><b>DIGESTER MASS TEMP ( <span>&#176;</span>C )</b></th>
+                <th colspan="5"><b>DIGESTER LOAD (AMP)</b></th>
+                <th colspan="5"><b>PRESS CONE PRESSURE (BAR)</b></th> -->
                 <th colspan="2"><b>PRESS NO.1</b></th>
                 <th colspan="2"><b>PRESS NO.2</b></th>
                 <th colspan="2"><b>PRESS NO.3</b></th>
                 <th colspan="2"><b>PRESS NO.4</b></th>
                 <th colspan="2"><b>PRESS NO.5</b></th>
-                <th colspan="2"><b>PRESS NO.6</b></th>
+                <!-- <th colspan="2"><b>PRESS NO.6</b></th> -->
+                <th colspan="2"><b>DIGESTER NO.1</b></th>
+                <th colspan="2"><b>DIGESTER NO.2</b></th>
+                <th colspan="2"><b>DIGESTER NO.3</b></th>
+                <th colspan="2"><b>DIGESTER NO.4</b></th>
+                <th colspan="2"><b>DIGESTER NO.5</b></th>
+                <th colspan="2"><b>CBC NO.1</b></th>
+                <th colspan="2"><b>CBC NO.2</b></th>
             </tr>
             <tr>
                 <th field="PRSDG_TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
@@ -44,32 +57,46 @@
                 <th field="PRSDG_TMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
                 <th field="PRSDG_TMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
                 <th field="PRSDG_TMP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
-                <th field="PRSDG_TMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th>
-                <th field="PRSDG_TMP_AVG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AVG</b></th>
+                <!-- <th field="PRSDG_TMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
+                <!-- <th field="PRSDG_TMP_AVG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AVG</b></th> -->
                 <th field="PRSDG_AMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
                 <th field="PRSDG_AMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
                 <th field="PRSDG_AMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
                 <th field="PRSDG_AMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
                 <th field="PRSDG_AMP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
-                <th field="PRSDG_AMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th>
+                <!-- <th field="PRSDG_AMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
                 <th field="PRSSP_CNP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
                 <th field="PRSSP_CNP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
                 <th field="PRSSP_CNP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
                 <th field="PRSSP_CNP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
                 <th field="PRSSP_CNP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
-                <th field="PRSSP_CNP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th>
-                <th field="PRSSP_SRT1_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END1_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP1END"><b>STOP</b></th>
-                <th field="PRSSP_SRT2_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END2_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP2END"><b>STOP</b></th>
-                <th field="PRSSP_SRT3_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END3_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP3END"><b>STOP</b></th>
-                <th field="PRSSP_SRT4_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END4_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP4END"><b>STOP</b></th>
-                <th field="PRSSP_SRT5_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END5_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP5END"><b>STOP</b></th>
-                <th field="PRSSP_SRT6_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="PRSSP_END6_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_SP6END"><b>STOP</b></th>
+                <!-- <th field="PRSSP_CNP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
+                <th field="PRSSP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSSP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSSP_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSSP_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSSP_HMS3" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSSP_HME3" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSSP_HMS4" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSSP_HME4" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSSP_HMS5" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSSP_HME5" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+
+                <th field="PRSDG_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSDG_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSDG_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSDG_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSDG_HMS3" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSDG_HME3" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSDG_HMS4" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSDG_HME4" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSDG_HMS5" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSDG_HME5" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+
+                <th field="PRSCB_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSCB_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="PRSCB_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="PRSCB_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
             </tr>
         </thead>
     </table>
