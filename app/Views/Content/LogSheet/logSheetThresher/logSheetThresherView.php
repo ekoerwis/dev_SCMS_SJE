@@ -309,7 +309,7 @@
         function exportDataPDF() {
         
             var dateParam = $('#dt-tdate').datebox('getValue');
-            var idParam =  $('#cb-stationid').combobox('getValue');
+            // var idParam =  $('#cb-stationid').combobox('getValue');
 
             if( dateParam.trim() == '' || dateParam.trim() == null ){
                 $.messager.alert({    
@@ -320,16 +320,16 @@
                 exit;   
             } 
 
-            if( idParam.trim() == '' || idParam.trim() == null ){
-                $.messager.alert({    
-                    title: 'Info',
-                    msg: 'Pilih Press ID Dahulu ! '
-                });
-                $('#cb-stationid').combobox('textbox').focus();
-                exit;   
-            } 
+            // if( idParam.trim() == '' || idParam.trim() == null ){
+            //     $.messager.alert({    
+            //         title: 'Info',
+            //         msg: 'Pilih Press ID Dahulu ! '
+            //     });
+            //     $('#cb-stationid').combobox('textbox').focus();
+            //     exit;   
+            // } 
 
-             var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetThresher/exportPDFFile?TDATE='; ?>"+dateParam+"&STATIONID="+idParam;
+             var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetThresher/exportPDFFile?TDATE='; ?>"+dateParam;
             // var url = "<?php // echo site_url() . '/../Content/LogSheet/logSheetThresher/cekPdfView?TDATE='; ?>"+dateParam+"&STATIONID="+idParam;
             window.open(url, "_blank");
     }
