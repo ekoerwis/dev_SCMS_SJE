@@ -84,8 +84,10 @@
             <tr class="trHeadTable1">
                 <th rowspan="3" class="thTable1"  width="50px"><b>JAM</b></th>
                 <th colspan="4" class="thTable1"  rowspan="2"><b>TEMPERATUR KERNEL SILO</b></th>
-                <th colspan="12" class="thTable1"><b>OPERASI HYDROCYCLONE</b></th>
-                <th colspan="12" class="thTable1" ><b>HM RIPPLE MILL</b></th>
+                <th colspan="2" rowspan="2" class="thTable1"><b>OPERASI HYDROCYCLONE</b></th>
+                <th colspan="8" class="thTable1" ><b>HM RIPPLE MILL</b></th>
+                <th colspan="2" rowspan="2" class="thTable1" ><b>FLOWMETER BAKFIT HDC</b></th>
+                <th colspan="2" rowspan="2" class="thTable1" ><b>BASCULATOR</b></th>
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
@@ -94,33 +96,15 @@
                 <th colspan="2" class="thTable1" ><b>2</b></th>
                 <th colspan="2" class="thTable1" ><b>3</b></th>
                 <th colspan="2" class="thTable1" ><b>4</b></th>
-                <th colspan="2" class="thTable1" ><b>5</b></th>
-                <th colspan="2" class="thTable1" ><b>6</b></th>
-                <th colspan="2" class="thTable1" ><b>1</b></th>
-                <th colspan="2" class="thTable1" ><b>2</b></th>
-                <th colspan="2" class="thTable1" ><b>3</b></th>
-                <th colspan="2" class="thTable1" ><b>4</b></th>
-                <th colspan="2" class="thTable1" ><b>5</b></th>
-                <th colspan="2" class="thTable1" ><b>6</b></th>
             </tr>
             <tr class="trHeadTable1">
                 <th class="thTable1" width="50px"><b>NO. 1</b></th>
                 <th class="thTable1" width="50px"><b>NO. 2</b></th>
                 <th class="thTable1" width="50px"><b>NO. 3</b></th>
                 <th class="thTable1" width="50px"><b>NO. 4</b></th>
-
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
-                <th class="thTable1" width="50px"><b>START</b></th>
-                <th class="thTable1" width="50px"><b>STOP</b></th>
+                
+                <th class="thTable1" width="50px"><b>1</b></th>
+                <th class="thTable1" width="50px"><b>2</b></th>
 
                 <th class="thTable1" width="50px"><b>AWAL</b></th>
                 <th class="thTable1" width="50px"><b>AKHIR</b></th>
@@ -153,32 +137,23 @@
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERSIL_TMP2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERSIL_TMP3'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERSIL_TMP4'],2,".",",") ?></td>
+                
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERHDS_L1ACT'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERHDS_L2ACT'],2,".",",") ?></td>
 
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR1_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR1_DISP'] == null){ echo $data_sql[$i]['KERHDS_END1_DISP']; }  ?></td>
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR2_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR2_DISP'] == null){ echo $data_sql[$i]['KERHDS_END2_DISP']; }  ?></td>
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR3_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR3_DISP'] == null){ echo $data_sql[$i]['KERHDS_END3_DISP']; }  ?></td>
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR4_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR4_DISP'] == null){ echo $data_sql[$i]['KERHDS_END4_DISP']; }  ?></td>
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR5_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR5_DISP'] == null){ echo $data_sql[$i]['KERHDS_END5_DISP']; }  ?></td>
-                <td class="tdTable1" ><?= $data_sql[$i]['KERHDS_STR6_DISP'] ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_STR6_DISP'] == null){ echo $data_sql[$i]['KERHDS_END6_DISP']; }  ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS2'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME2'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS3'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME3'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS4'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME4'],0,".",",") ?></td>
 
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME2'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS3'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME3'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS4'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME4'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS5'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME5'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS6'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME6'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAWAL'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAKHIR'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_S1'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_E1'],2,".",",") ?></td>
             </tr>
 <?php
             

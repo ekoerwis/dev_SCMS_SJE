@@ -28,24 +28,18 @@
         <thead>
             <tr>
                 <th colspan="4" rowspan="2"><b>TEMPERATUR KERNEL SILO</b></th>
-                <th colspan="12" ><b>OPERASI HYDROCYCLONE</b></th>
-                <th colspan="12"><b>HM RIPPLE MILL</b></th>
+                <th colspan="2" rowspan="2" ><b>OPERASI HYDROCYCLONE</b></th>
+                <th colspan="8"><b>HM RIPPLE MILL</b></th>
+                <th colspan="2" rowspan="2" ><b>FLOWMETER BAKFIT HDC</b></th>
+                <th colspan="2" rowspan="2" ><b>BASCULATOR</b></th>
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
                 <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
             <tr>
-                <th colspan="2" ><b>1</b></th>
-                <th colspan="2" ><b>2</b></th>
-                <th colspan="2" ><b>3</b></th>
-                <th colspan="2" ><b>4</b></th>
-                <th colspan="2" ><b>5</b></th>
-                <th colspan="2" ><b>6</b></th>
-                <th colspan="2" ><b>1</b></th>
-                <th colspan="2" ><b>2</b></th>
-                <th colspan="2" ><b>3</b></th>
-                <th colspan="2" ><b>4</b></th>
-                <th colspan="2" ><b>5</b></th>
-                <th colspan="2" ><b>6</b></th>
+                <th colspan="2"><b>1</b></th>
+                <th colspan="2"><b>2</b></th>
+                <th colspan="2"><b>3</b></th>
+                <th colspan="2"><b>4</b></th>
             </tr>
             <tr>
                 <th field="KERSIL_TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 1</b></th>
@@ -53,31 +47,23 @@
                 <th field="KERSIL_TMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 3</b></th>
                 <th field="KERSIL_TMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 4</b></th>
                 
-                <th field="KERHDS_STR1_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END1_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_1"><b>STOP</b></th>
-                <th field="KERHDS_STR2_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END2_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_2"><b>STOP</b></th>
-                <th field="KERHDS_STR3_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END3_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_3"><b>STOP</b></th>
-                <th field="KERHDS_STR4_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END4_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_4"><b>STOP</b></th>
-                <th field="KERHDS_STR5_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END5_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_5"><b>STOP</b></th>
-                <th field="KERHDS_STR6_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>START</b></th>
-                <th field="KERHDS_END6_DISP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="basedOnStart_6"><b>STOP</b></th>
+                <th field="KERHDS_L1ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>1</b></th>
+                <th field="KERHDS_L2ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>2</b></th>
 
-                <th field="KERRPM_HMS1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERRPM_HME6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="KERRPM_HME1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="KERRPM_HME2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="KERRPM_HME3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="KERRPM_HME4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
+                
+                <th field="HDCAWAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
+                <th field="HDCAKHIR" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
+
+                <th field="KERBAS_S1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
+                <th field="KERBAS_E1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
             </tr>
         </thead>
     </table>
