@@ -63,12 +63,12 @@
                 <th field="THREBP_GB2_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
                 <th field="THREBP_GB2_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
                 <th field="THREBP_GB2_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
-                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="THRBNC_HMS1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THRBNC_HME1" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THRBNC_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
+                <th field="THRBNC_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
             </tr>
         </thead>
     </table>
@@ -77,7 +77,7 @@
         <div class='col-xl-12 col-lg-12 col-md-12 row'>
             <div class="col row">
                 <input id="dt-tdate" name="TDATE" class="easyui-datebox" style="width: 150px;"  data-options="required:true">
-                <input id="cb-stationid" name="STATIONID" class="" style="width:100px;" >
+                <!-- <input id="cb-stationid" name="STATIONID" class="" style="width:100px;" > -->
                 <!-- <div class="col-xl-3 col-lg-3 col-md-3 row"> -->
                     <!-- <input id="tb-Year" name="YEARNUMBER" class="easyui-numberbox " style="width: 100px;"  data-options="required:true" prompt="Year"> -->
                     <!-- <input id="cg-MonthNumber" name="MONTHNUMBER" class="easyui-combogrid" style="width: 200px;"  data-options="required:true" prompt="Month"> -->
@@ -105,14 +105,14 @@
 
             settingCalendarTDATE();            
 
-            $('#cb-stationid').combobox({
-                valueField: 'ID',
-                textField: 'ID',
-                prompt:"THR ID",
-                required:true,
-                value:"1",
-                url: "<?php  echo site_url() . '/../Content/LogSheet/logSheetThresher/getStationID'; ?>",
-            });
+            // $('#cb-stationid').combobox({
+            //     valueField: 'ID',
+            //     textField: 'ID',
+            //     prompt:"THR ID",
+            //     required:true,
+            //     value:"1",
+            //     url: "<?php // echo site_url() . '/../Content/LogSheet/logSheetThresher/getStationID'; ?>",
+            // });
 
             doSearch();
 
@@ -170,7 +170,7 @@
         function doSearch() {
 
             var dateParam = $('#dt-tdate').datebox('getValue');
-            var idParam =  $('#cb-stationid').combobox('getValue');
+            // var idParam =  $('#cb-stationid').combobox('getValue');
 
             if( dateParam.trim() == '' || dateParam.trim() == null ){
                 // alert('"Tanggal" Harus Di Isi Dahulu');
@@ -182,25 +182,25 @@
                 exit;   
             } 
 
-            if( idParam.trim() == '' || idParam.trim() == null ){
-                // alert('"Storage" Harus Di Isi Dahulu');
-                $.messager.alert({    
-                    title: 'Info',
-                    msg: 'Pilih Press ID Dahulu ! '
-                });
-                $('#cb-stationid').combobox('textbox').focus();
-                exit;   
-            } 
+            // if( idParam.trim() == '' || idParam.trim() == null ){
+            //     // alert('"Storage" Harus Di Isi Dahulu');
+            //     $.messager.alert({    
+            //         title: 'Info',
+            //         msg: 'Pilih Press ID Dahulu ! '
+            //     });
+            //     $('#cb-stationid').combobox('textbox').focus();
+            //     exit;   
+            // } 
 
             $('#dg').datagrid('load', {
                 TDATE: $('#dt-tdate').datebox('getValue'),
-                STATIONID: $('#cb-stationid').combobox('getValue'),
+                // STATIONID: $('#cb-stationid').combobox('getValue'),
             });
         }
 
         function doSearchReset() {
             $('#dt-tdate').datebox('reset');
-            $('#cb-stationid').combobox('reset');
+            // $('#cb-stationid').combobox('reset');
 
         }
 
