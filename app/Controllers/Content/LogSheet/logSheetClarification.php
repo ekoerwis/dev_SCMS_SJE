@@ -97,7 +97,10 @@ class logSheetClarification extends \App\Controllers\BaseController
 
         $titleOrg =$this->logSheetClarificationModel->getSCD_MA_PARAM('ORG','ORGPRN')[0]['VALSTR'];
         $titleSite =$this->logSheetClarificationModel->getSCD_MA_PARAM('ORG','ORGSITELONG')[0]['VALSTR'];
+		
+        $data = $this->data;
 
+		$data['imagesPath'] = $this->config->imagesPath;
 		$data['Judul'] = 'Laporan '.$this->data['site_title'];
 		$data['data_sql'] = $this->logSheetClarificationModel->dataListExcel();
 

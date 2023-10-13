@@ -78,8 +78,8 @@
                 <th field="SGTTMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
                 <th field="SSPTMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>-</b></th>
                 <th field="SSPTMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>-</b></th>
-                <th field="DECACT1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
-                <th field="DECACT2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
+                <th field="DECACT1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO.1</b></th>
+                <th field="DECACT2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO.2</b></th>
                 <th field="DECTMP1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostum"><b>-</b></th>
                 <th field="HWTTMP1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostum"><b>TEMP (<span>&#176;</span>C)</b></th>
                 <!-- <th field="SDTTMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>YES</b></th> -->
@@ -256,6 +256,17 @@
                     returnVal = parseFloat(val).format(0, 3, ',', '.');
                 }
             } 
+            return  returnVal;
+        }
+
+        function imageTrueFalse(val,row){
+
+            var returnVal ='';
+            if(val > 0){
+                returnVal = '<i class="fas fa-check"></i>';
+            } else {
+                returnVal = '<i class="fas fa-times" style="color: red;"></i>';
+            }
             return  returnVal;
         }
 
