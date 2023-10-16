@@ -49,8 +49,8 @@
                 <th rowspan="2" field="THREBP_A2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP II</b></th>
                 <th colspan="3" ><b>EBP I</b></th>
                 <th colspan="3" ><b>EBP II</b></th>
-                <th rowspan="2" field="THRPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 1</b></th>
-                <th rowspan="2" field="THRPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 2</b></th>
+                <th rowspan="2" field="THRPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO. 1</b></th>
+                <th rowspan="2" field="THRPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO. 2</b></th>
                 <th colspan="2" ><b>EBP I</b></th>
                 <th colspan="2" ><b>EBP II</b></th>
                 <th colspan="2" ><b>BUNCH CRUISER</b></th>
@@ -257,6 +257,17 @@
             if(Number(val) == 3){
                 returnVal = '<i class="fas fa-check"></i>';
             } 
+            return  returnVal;
+        }
+        
+        function imageTrueFalse(val,row){
+
+            var returnVal ='';
+            if(val > 0){
+                returnVal = '<i class="fas fa-check"></i>';
+            } else {
+                returnVal = '<i class="fas fa-times" style="color: red;"></i>';
+            }
             return  returnVal;
         }
 

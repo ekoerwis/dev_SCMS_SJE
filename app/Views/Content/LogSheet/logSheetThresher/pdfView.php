@@ -156,8 +156,8 @@
                 <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 1) echo "V"; ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 2) echo "V"; ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 3) echo "V"; ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRPMP1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRPMP2'],2,".",",") ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP1'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP2'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS1'],0,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME1'],0,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS2'],0,".",",") ?></td>
