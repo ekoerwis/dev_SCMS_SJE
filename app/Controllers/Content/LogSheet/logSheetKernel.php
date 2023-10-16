@@ -97,6 +97,7 @@ class logSheetKernel extends \App\Controllers\BaseController
         $titleOrg =$this->logSheetKernelModel->getSCD_MA_PARAM('ORG','ORGPRN')[0]['VALSTR'];
         $titleSite =$this->logSheetKernelModel->getSCD_MA_PARAM('ORG','ORGSITELONG')[0]['VALSTR'];
 
+        $data['imagesPath'] = $this->config->imagesPath;
 		$data['Judul'] = 'Laporan '.$this->data['site_title'];
 		$data['data_sql'] = $this->logSheetKernelModel->dataListExcel();
 

@@ -138,8 +138,8 @@
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERSIL_TMP3'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERSIL_TMP4'],2,".",",") ?></td>
                 
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERHDS_L1ACT'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERHDS_L2ACT'],2,".",",") ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_L1ACT'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_L2ACT'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
 
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS1'],0,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME1'],0,".",",") ?></td>

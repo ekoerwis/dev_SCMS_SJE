@@ -47,8 +47,8 @@
                 <th field="KERSIL_TMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 3</b></th>
                 <th field="KERSIL_TMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO. 4</b></th>
                 
-                <th field="KERHDS_L1ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>1</b></th>
-                <th field="KERHDS_L2ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter=""><b>2</b></th>
+                <th field="KERHDS_L1ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>1</b></th>
+                <th field="KERHDS_L2ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>2</b></th>
 
                 <th field="KERRPM_HMS1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
                 <th field="KERRPM_HME1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
@@ -258,6 +258,19 @@
                 var result = val;
             }
             return  result;
+        }
+
+        
+
+        function imageTrueFalse(val,row){
+
+            var returnVal ='';
+            if(val > 0){
+                returnVal = '<i class="fas fa-check"></i>';
+            } else {
+                returnVal = '<i class="fas fa-times" style="color: red;"></i>';
+            }
+            return  returnVal;
         }
 
         function imageTrue(val,row){
