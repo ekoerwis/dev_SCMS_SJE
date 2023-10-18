@@ -86,14 +86,14 @@
                 <!-- <th field="SDTTMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO</b></th> -->
                 <!-- <th field="SDTTMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>START</b></th> -->
                 <!-- <th field="SDTTMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>STOP</b></th> -->
-                <th field="SPHMS1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="SPHME1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="SPHMS2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="SPHME2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="DCHMS1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="DCHME1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="DCHMS2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="DCHME2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="SPHMS1" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>START</b></th>
+                <th field="SPHME1" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>STOP</b></th>
+                <th field="SPHMS2" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>START</b></th>
+                <th field="SPHME2" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>STOP</b></th>
+                <th field="DCHMS1" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>START</b></th>
+                <th field="DCHME1" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>STOP</b></th>
+                <th field="DCHMS2" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>START</b></th>
+                <th field="DCHME2" halign="center" data-options="sortable:false,width:75,align:'center' " formatter="hmFormat"><b>STOP</b></th>
             </tr>
         </thead>
     </table>
@@ -284,6 +284,23 @@
             var returnVal ='';
             if(val < 1){
                 returnVal = '<i class="fas fa-times"></i>';
+            } 
+            return  returnVal;
+        }
+        
+
+        function hmFormat(val,row){
+
+            var returnVal ='';
+            var lengthVal = val.length;
+
+            if(val != null){
+                var Jam = val.substr(0,lengthVal-4);
+                var Menit = val.substr(lengthVal-4,2);
+                var Detik = val.substr(lengthVal-2,2);
+
+
+                returnVal = Jam+' '+Menit+' '+Detik;
             } 
             return  returnVal;
         }
