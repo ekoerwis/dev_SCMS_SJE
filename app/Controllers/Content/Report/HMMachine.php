@@ -146,7 +146,9 @@ class HMMachine extends \App\Controllers\BaseController
         $spreadsheet->getActiveSheet()->getStyle('A5:AW6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $spreadsheet->getActiveSheet()->getStyle('A5:AW6')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
 
-        $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getFont()->setBold(true);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AW6')->getAlignment()->setWrapText(true);
+
+        $spreadsheet->getActiveSheet()->getStyle('A3:D3')->getFont()->setBold(true);
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
 
         
@@ -181,66 +183,66 @@ class HMMachine extends \App\Controllers\BaseController
         $sheet->setCellValue('B6', 'CONV. 1.1');
         $sheet->setCellValue('C6', 'CONV.1.2');
         $sheet->setCellValue('D6', 'CONV.2.1');
-        $sheet->setCellValue('E6', 'BSP');
+        $sheet->setCellValue('E6', 'BUNC SPLITTER');
         
         $sheet->mergeCells('F5:I5');
         $sheet->setCellValue('F5', 'STERILIZER');
-        $sheet->setCellValue('F6', 'FDC');
-        $sheet->setCellValue('G6', 'SFC');
-        $sheet->setCellValue('H6', 'CPM1');
-        $sheet->setCellValue('I6', 'CPM2');
+        $sheet->setCellValue('F6', 'FRUIT DISTRIBUTING CONV');
+        $sheet->setCellValue('G6', 'STERILIZER FRUIT CONV');
+        $sheet->setCellValue('H6', 'CONDNSAT PUMP 1');
+        $sheet->setCellValue('I6', 'CONDNSAT PUMP 2');
 
         $sheet->mergeCells('J5:U5');
         $sheet->setCellValue('J5', 'THRESER STATION');
-        $sheet->setCellValue('J6', 'THR1');
-        $sheet->setCellValue('K6', 'THR2');
-        $sheet->setCellValue('L6', 'THR3');
-        $sheet->setCellValue('M6', 'THR4');
-        $sheet->setCellValue('N6', 'CSV1');
-        $sheet->setCellValue('O6', 'CSV2');
-        $sheet->setCellValue('P6', 'BNC1');
-        $sheet->setCellValue('Q6', 'BNP1');
-        $sheet->setCellValue('R6', 'BNP2');
-        $sheet->setCellValue('S6', 'STC');
-        $sheet->setCellValue('T6', 'PMP1');
-        $sheet->setCellValue('U6', 'PMP2');
+        $sheet->setCellValue('J6', 'THR 1');
+        $sheet->setCellValue('K6', 'THR 2');
+        $sheet->setCellValue('L6', 'THR 3');
+        $sheet->setCellValue('M6', 'THR 4');
+        $sheet->setCellValue('N6', 'CROS CONV.1');
+        $sheet->setCellValue('O6', 'CROS CONV.2');
+        $sheet->setCellValue('P6', 'BUNCH CRUISER 1');
+        $sheet->setCellValue('Q6', 'BUNCH PRESS 1');
+        $sheet->setCellValue('R6', 'BUNCH PRESS 2');
+        $sheet->setCellValue('S6', 'STATIC CRANE');
+        $sheet->setCellValue('T6', 'PUMP 1');
+        $sheet->setCellValue('U6', 'PUMP 2');
 
         $sheet->mergeCells('V5:AG5');
         $sheet->setCellValue('V5', 'PRESS STATION');
-        $sheet->setCellValue('V6', 'DGT1');
-        $sheet->setCellValue('W6', 'DGT2');
-        $sheet->setCellValue('X6', 'DGT3');
-        $sheet->setCellValue('Y6', 'DGT4');
-        $sheet->setCellValue('Z6', 'DGT5');
-        $sheet->setCellValue('AA6', 'SCP1');
-        $sheet->setCellValue('AB6', 'SCP2');
-        $sheet->setCellValue('AC6', 'SCP3');
-        $sheet->setCellValue('AD6', 'SCP4');
-        $sheet->setCellValue('AE6', 'SCP5');
-        $sheet->setCellValue('AF6', 'CBC1');
-        $sheet->setCellValue('AG6', 'CBC2');
+        $sheet->setCellValue('V6', 'DIGISTER 1');
+        $sheet->setCellValue('W6', 'DIGISTER 2');
+        $sheet->setCellValue('X6', 'DIGISTER 3');
+        $sheet->setCellValue('Y6', 'DIGISTER 4');
+        $sheet->setCellValue('Z6', 'DIGISTER 5');
+        $sheet->setCellValue('AA6', 'SCREW PRESS 1');
+        $sheet->setCellValue('AB6', 'SCREW PRESS 2');
+        $sheet->setCellValue('AC6', 'SCREW PRESS 3');
+        $sheet->setCellValue('AD6', 'SCREW PRESS 4');
+        $sheet->setCellValue('AE6', 'SCREW PRESS 5');
+        $sheet->setCellValue('AF6', 'CAKE BRAKE CONV.1');
+        $sheet->setCellValue('AG6', 'CAKE BRAKE CONV.2');
 
         $sheet->mergeCells('AH5:AM5');
         $sheet->setCellValue('AH5', 'CLARIFICATION');
-        $sheet->setCellValue('AH6', 'DCT1');
-        $sheet->setCellValue('AI6', 'DCT2');
-        $sheet->setCellValue('AJ6', 'DSR1');
-        $sheet->setCellValue('AK6', 'DSR2');
-        $sheet->setCellValue('AL6', 'TST1');
-        $sheet->setCellValue('AM6', 'SPR2');
+        $sheet->setCellValue('AH6', 'DECANTER 1');
+        $sheet->setCellValue('AI6', 'DECANTER 2');
+        $sheet->setCellValue('AJ6', 'DOUBLE SANDCYCLONE REC.1');
+        $sheet->setCellValue('AK6', 'DOUBLE SANDCYCLONE REC.2');
+        $sheet->setCellValue('AL6', 'TRIPLE SANDCYCLONE BUF. TANK 1');
+        $sheet->setCellValue('AM6', 'SEPARATOR 2');
 
         $sheet->mergeCells('AN5:AW5');
         $sheet->setCellValue('AN5', 'KERNEL');
-        $sheet->setCellValue('AN6', 'RPM1');
-        $sheet->setCellValue('AO6', 'RPM2');
-        $sheet->setCellValue('AP6', 'RPM3');
-        $sheet->setCellValue('AQ6', 'RPM4');
-        $sheet->setCellValue('AR6', 'HDS1.1');
-        $sheet->setCellValue('AS6', 'HDS1.2');
-        $sheet->setCellValue('AT6', 'HDS1.3');
-        $sheet->setCellValue('AU6', 'HDS2.1');
-        $sheet->setCellValue('AV6', 'HDS2.2');
-        $sheet->setCellValue('AW6', 'HDS2.3');
+        $sheet->setCellValue('AN6', 'RIPPLE MILL 1');
+        $sheet->setCellValue('AO6', 'RIPPLE MILL 2');
+        $sheet->setCellValue('AP6', 'RIPPLE MILL 3');
+        $sheet->setCellValue('AQ6', 'RIPPLE MILL 4');
+        $sheet->setCellValue('AR6', 'HYDROCYCLONE 1.1');
+        $sheet->setCellValue('AS6', 'HYDROCYCLONE 1.2');
+        $sheet->setCellValue('AT6', 'HYDROCYCLONE 1.3');
+        $sheet->setCellValue('AU6', 'HYDROCYCLONE 2.1');
+        $sheet->setCellValue('AV6', 'HYDROCYCLONE 2.2');
+        $sheet->setCellValue('AW6', 'HYDROCYCLONE 2.3');
 
         // $sheet->mergeCells('E5:E6');
         // $spreadsheet->getActiveSheet()->getStyle('E5:E6')->getAlignment()->setWrapText(true);

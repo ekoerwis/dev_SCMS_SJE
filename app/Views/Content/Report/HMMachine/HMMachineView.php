@@ -46,56 +46,56 @@
                 <th field="LDRCVR11" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CONV. 1.1</b></th>
                 <th field="LDRCVR12" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CONV.1.2</b></th>
                 <th field="LDRCVR21" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CONV.2.1</b></th>
-                <th field="LDRBSP11" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BSP</b></th>
+                <th field="LDRBSP11" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BUNC SPLITTER</b></th>
 
-                <th field="STZFDC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>FDC</b></th>
-                <th field="STZSFC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SFC</b></th>
-                <th field="STZCPMP1" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CPM1</b></th>
-                <th field="STZCPMP2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CPM2</b></th>
+                <th field="STZFDC01" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>FRUIT DISTRIBUTING CONV</b></th>
+                <th field="STZSFC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>STERILIZER FRUIT CONV</b></th>
+                <th field="STZCPMP1" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CONDNSAT PUMP 1</b></th>
+                <th field="STZCPMP2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CONDNSAT PUMP 2</b></th>
 
-                <th field="THRTHR01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR1</b></th>
-                <th field="THRTHR02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR2</b></th>
-                <th field="THRTHR03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR3</b></th>
-                <th field="THRTHR04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR4</b></th>
-                <th field="THRCRC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CSV1</b></th>
-                <th field="THRCRC02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CSV2</b></th>
-                <th field="THRBNC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BNC1</b></th>
-                <th field="THRBNP01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BNP1</b></th>
-                <th field="THRBNP02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BNP2</b></th>
-                <th field="THRSTC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>STC</b></th>
-                <th field="THRPMP01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>PMP1</b></th>
-                <th field="THRPMP02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>PMP2</b></th>
+                <th field="THRTHR01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR 1</b></th>
+                <th field="THRTHR02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR 2</b></th>
+                <th field="THRTHR03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR 3</b></th>
+                <th field="THRTHR04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>THR 4</b></th>
+                <th field="THRCRC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CROS CONV.1</b></th>
+                <th field="THRCRC02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CROS CONV.2</b></th>
+                <th field="THRBNC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BUNCH CRUISER 1</b></th>
+                <th field="THRBNP01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BUNCH PRESS 1</b></th>
+                <th field="THRBNP02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>BUNCH PRESS 2</b></th>
+                <th field="THRSTC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>STATIC CRANE</b></th>
+                <th field="THRPMP01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>PUMP 1</b></th>
+                <th field="THRPMP02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>PUMP 2</b></th>
 
-                <th field="PRSDIG01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DGT1</b></th>
-                <th field="PRSDIG02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DGT2</b></th>
-                <th field="PRSDIG03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DGT3</b></th>
-                <th field="PRSDIG04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DGT4</b></th>
-                <th field="PRSDIG05" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DGT5</b></th>
-                <th field="PRSPRS01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCP1</b></th>
-                <th field="PRSPRS02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCP2</b></th>
-                <th field="PRSPRS03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCP3</b></th>
-                <th field="PRSPRS04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCP4</b></th>
-                <th field="PRSPRS05" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCP5</b></th>
-                <th field="PRSCBC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CBC1</b></th>
-                <th field="PRSCBC02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CBC2</b></th>
+                <th field="PRSDIG01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DIGISTER 1</b></th>
+                <th field="PRSDIG02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DIGISTER 2</b></th>
+                <th field="PRSDIG03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DIGISTER 3</b></th>
+                <th field="PRSDIG04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DIGISTER 4</b></th>
+                <th field="PRSDIG05" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DIGISTER 5</b></th>
+                <th field="PRSPRS01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCREW PRESS 1</b></th>
+                <th field="PRSPRS02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCREW PRESS 2</b></th>
+                <th field="PRSPRS03" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCREW PRESS 3</b></th>
+                <th field="PRSPRS04" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCREW PRESS 4</b></th>
+                <th field="PRSPRS05" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SCREW PRESS 5</b></th>
+                <th field="PRSCBC01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CAKE BRAKE CONV.1</b></th>
+                <th field="PRSCBC02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>CAKE BRAKE CONV.2</b></th>
 
-                <th field="CLRDCT01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DCT1</b></th>
-                <th field="CLRDCT02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DCT2</b></th>
-                <th field="CLRDSR01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DSR1</b></th>
-                <th field="CLRDSR02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DSR2</b></th>
-                <th field="CLRTST01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>TST1</b></th>
-                <th field="CLRSPR2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SPR2</b></th>
+                <th field="CLRDCT01" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DECANTER 1</b></th>
+                <th field="CLRDCT02" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>DECANTER 2</b></th>
+                <th field="CLRDSR01" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>DOUBLE SANDCYCLONE REC.1</b></th>
+                <th field="CLRDSR02" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>DOUBLE SANDCYCLONE REC.2</b></th>
+                <th field="CLRTST01" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>TRIPLE SANDCYCLONE BUF. TANK 1</b></th>
+                <th field="CLRSPR2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>SEPARATOR 2</b></th>
 
-                <th field="KERRPM1" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RPM1</b></th>
-                <th field="KERRPM2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RPM2</b></th>
-                <th field="KERRPM3" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RPM3</b></th>
-                <th field="KERRPM4" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RPM4</b></th>
-                <th field="KERHDC11" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS1.1</b></th>
-                <th field="KERHDC12" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS1.2</b></th>
-                <th field="KERHDC13" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS1.3</b></th>
-                <th field="KERHDC21" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS2.1</b></th>
-                <th field="KERHDC22" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS2.2</b></th>
-                <th field="KERHDC23" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>HDS2.3</b></th>
+                <th field="KERRPM1" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RIPPLE MILL 1</b></th>
+                <th field="KERRPM2" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RIPPLE MILL 2</b></th>
+                <th field="KERRPM3" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RIPPLE MILL 3</b></th>
+                <th field="KERRPM4" halign="center" data-options="sortable:false,width:80,align:'right' " formatter="hmFormat"><b>RIPPLE MILL 4</b></th>
+                <th field="KERHDC11" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 1.1</b></th>
+                <th field="KERHDC12" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 1.2</b></th>
+                <th field="KERHDC13" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 1.3</b></th>
+                <th field="KERHDC21" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 2.1</b></th>
+                <th field="KERHDC22" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 2.2</b></th>
+                <th field="KERHDC23" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>HYDROCYCLONE 2.3</b></th>
             </tr>
         </thead>
     </table>
