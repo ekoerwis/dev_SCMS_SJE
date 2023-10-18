@@ -106,18 +106,18 @@
                 <th class="thTable1" width="50px"><b>1</b></th>
                 <th class="thTable1" width="50px"><b>2</b></th>
 
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
-                <th class="thTable1" width="50px"><b>AWAL</b></th>
-                <th class="thTable1" width="50px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
+                <th class="thTable1" width="60px"><b>AWAL</b></th>
+                <th class="thTable1" width="60px"><b>AKHIR</b></th>
             </tr>
             </tr>
         </thead>
@@ -141,19 +141,19 @@
                 <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_L1ACT'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['KERHDS_L2ACT'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
 
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS1'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME1'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS2'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME2'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS3'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME3'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HMS4'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERRPM_HME4'],0,".",",") ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HMS1'],0,strlen($data_sql[$i]['KERRPM_HMS1'])-4).' '.substr($data_sql[$i]['KERRPM_HMS1'],strlen($data_sql[$i]['KERRPM_HMS1'])-4,2).' '.substr($data_sql[$i]['KERRPM_HMS1'],strlen($data_sql[$i]['KERRPM_HMS1'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HME1'],0,strlen($data_sql[$i]['KERRPM_HME1'])-4).' '.substr($data_sql[$i]['KERRPM_HME1'],strlen($data_sql[$i]['KERRPM_HME1'])-4,2).' '.substr($data_sql[$i]['KERRPM_HME1'],strlen($data_sql[$i]['KERRPM_HME1'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HMS2'],0,strlen($data_sql[$i]['KERRPM_HMS2'])-4).' '.substr($data_sql[$i]['KERRPM_HMS2'],strlen($data_sql[$i]['KERRPM_HMS2'])-4,2).' '.substr($data_sql[$i]['KERRPM_HMS2'],strlen($data_sql[$i]['KERRPM_HMS2'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HME2'],0,strlen($data_sql[$i]['KERRPM_HME2'])-4).' '.substr($data_sql[$i]['KERRPM_HME2'],strlen($data_sql[$i]['KERRPM_HME2'])-4,2).' '.substr($data_sql[$i]['KERRPM_HME2'],strlen($data_sql[$i]['KERRPM_HME2'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HMS3'],0,strlen($data_sql[$i]['KERRPM_HMS3'])-4).' '.substr($data_sql[$i]['KERRPM_HMS3'],strlen($data_sql[$i]['KERRPM_HMS3'])-4,2).' '.substr($data_sql[$i]['KERRPM_HMS3'],strlen($data_sql[$i]['KERRPM_HMS3'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HME3'],0,strlen($data_sql[$i]['KERRPM_HME3'])-4).' '.substr($data_sql[$i]['KERRPM_HME3'],strlen($data_sql[$i]['KERRPM_HME3'])-4,2).' '.substr($data_sql[$i]['KERRPM_HME3'],strlen($data_sql[$i]['KERRPM_HME3'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HMS4'],0,strlen($data_sql[$i]['KERRPM_HMS4'])-4).' '.substr($data_sql[$i]['KERRPM_HMS4'],strlen($data_sql[$i]['KERRPM_HMS4'])-4,2).' '.substr($data_sql[$i]['KERRPM_HMS4'],strlen($data_sql[$i]['KERRPM_HMS4'])-2,2) ?></td>
+                <td class="tdTable1" ><?=  substr($data_sql[$i]['KERRPM_HME4'],0,strlen($data_sql[$i]['KERRPM_HME4'])-4).' '.substr($data_sql[$i]['KERRPM_HME4'],strlen($data_sql[$i]['KERRPM_HME4'])-4,2).' '.substr($data_sql[$i]['KERRPM_HME4'],strlen($data_sql[$i]['KERRPM_HME4'])-2,2) ?></td>
 
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAWAL'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAKHIR'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_S1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_E1'],2,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAWAL'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['HDCAKHIR'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_S1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= number_format($data_sql[$i]['KERBAS_E1'],0,".",",") ?></td>
             </tr>
 <?php
             

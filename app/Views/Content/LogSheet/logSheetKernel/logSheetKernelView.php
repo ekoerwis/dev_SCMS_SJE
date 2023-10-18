@@ -50,20 +50,20 @@
                 <th field="KERHDS_L1ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>1</b></th>
                 <th field="KERHDS_L2ACT" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>2</b></th>
 
-                <th field="KERRPM_HMS1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
-                <th field="KERRPM_HME1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
-                <th field="KERRPM_HME2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
-                <th field="KERRPM_HME3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
-                <th field="KERRPM_HMS4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
-                <th field="KERRPM_HME4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AWAL</b></th>
+                <th field="KERRPM_HME1" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AWAL</b></th>
+                <th field="KERRPM_HME2" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AWAL</b></th>
+                <th field="KERRPM_HME3" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AKHIR</b></th>
+                <th field="KERRPM_HMS4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AWAL</b></th>
+                <th field="KERRPM_HME4" halign="center" data-options="sortable:false,width:100,align:'center' " formatter="hmFormat"><b>AKHIR</b></th>
                 
-                <th field="HDCAWAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="HDCAKHIR" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
+                <th field="HDCAWAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="HDCAKHIR" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
 
-                <th field="KERBAS_S1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AWAL</b></th>
-                <th field="KERBAS_E1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AKHIR</b></th>
+                <th field="KERBAS_S1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AWAL</b></th>
+                <th field="KERBAS_E1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumBilanganBulat"><b>AKHIR</b></th>
             </tr>
         </thead>
     </table>
@@ -287,6 +287,23 @@
             var returnVal ='';
             if(val < 1){
                 returnVal = '<i class="fas fa-times"></i>';
+            } 
+            return  returnVal;
+        }
+        
+
+        function hmFormat(val,row){
+
+            var returnVal ='';
+            var lengthVal = val.length;
+
+            if(val != null){
+                var Jam = val.substr(0,lengthVal-4);
+                var Menit = val.substr(lengthVal-4,2);
+                var Detik = val.substr(lengthVal-2,2);
+
+
+                returnVal = Jam+' '+Menit+' '+Detik;
             } 
             return  returnVal;
         }
