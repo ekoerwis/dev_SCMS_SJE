@@ -63,12 +63,12 @@
                 <th field="THREBP_GB2_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
                 <th field="THREBP_GB2_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
                 <th field="THREBP_GB2_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
-                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
-                <th field="THRBNC_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>START</b></th>
-                <th field="THRBNC_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="formatNumberColumnCostumBilanganBulat"><b>STOP</b></th>
+                <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>
+                <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>STOP</b></th>
+                <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>
+                <th field="THREBP_HME2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>STOP</b></th>
+                <th field="THRBNC_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>
+                <th field="THRBNC_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>STOP</b></th>
             </tr>
         </thead>
     </table>
@@ -285,6 +285,22 @@
             var returnVal ='';
             if(val < 1){
                 returnVal = '<i class="fas fa-times"></i>';
+            } 
+            return  returnVal;
+        }
+
+        function hmFormat(val,row){
+
+            var returnVal ='';
+            var lengthVal = val.length;
+
+            if(val != null){
+                var Jam = val.substr(0,lengthVal-4);
+                var Menit = val.substr(lengthVal-4,2);
+                var Detik = val.substr(lengthVal-2,2);
+
+
+                returnVal = Jam+' '+Menit+' '+Detik;
             } 
             return  returnVal;
         }

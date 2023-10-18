@@ -122,12 +122,12 @@
                 <th class="thTable1" field="CSTOLY3" width="45px"><b>BAIK</b></th>
                 <th class="thTable1" field="CSTOLY4" width="45px"><b>NORMAL</b></th>
                 <th class="thTable1" field="CSTOLY5" width="45px"><b>KURANG</b></th>
-                <th class="thTable1" field="CSTOLY6" width="45px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP1" width="45px"><b>STOP</b></th>
-                <th class="thTable1" field="SDTTMP2" width="45px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP3" width="45px"><b>STOP</b></th>
-                <th class="thTable1" field="SDTTMP2" width="45px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP3" width="45px"><b>STOP</b></th>
+                <th class="thTable1" field="CSTOLY6" width="55px"><b>START</b></th>
+                <th class="thTable1" field="SDTTMP1" width="55px"><b>STOP</b></th>
+                <th class="thTable1" field="SDTTMP2" width="55px"><b>START</b></th>
+                <th class="thTable1" field="SDTTMP3" width="55px"><b>STOP</b></th>
+                <th class="thTable1" field="SDTTMP2" width="55px"><b>START</b></th>
+                <th class="thTable1" field="SDTTMP3" width="55px"><b>STOP</b></th>
             </tr>
         </thead>
         <tbody>
@@ -158,12 +158,12 @@
                 <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 3) echo "V"; ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP1'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP2'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS1'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME1'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HMS2'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_HME2'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRBNC_HMS1'],0,".",",") ?></td>
-                <td class="tdTable1" ><?= number_format($data_sql[$i]['THRBNC_HME1'],0,".",",") ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THREBP_HMS1'],0,strlen($data_sql[$i]['THREBP_HMS1'])-4).' '.substr($data_sql[$i]['THREBP_HMS1'],strlen($data_sql[$i]['THREBP_HMS1'])-4,2).' '.substr($data_sql[$i]['THREBP_HMS1'],strlen($data_sql[$i]['THREBP_HMS1'])-2,2)  ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THREBP_HME1'],0,strlen($data_sql[$i]['THREBP_HME1'])-4).' '.substr($data_sql[$i]['THREBP_HME1'],strlen($data_sql[$i]['THREBP_HME1'])-4,2).' '.substr($data_sql[$i]['THREBP_HME1'],strlen($data_sql[$i]['THREBP_HME1'])-2,2)  ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THREBP_HMS2'],0,strlen($data_sql[$i]['THREBP_HMS2'])-4).' '.substr($data_sql[$i]['THREBP_HMS2'],strlen($data_sql[$i]['THREBP_HMS2'])-4,2).' '.substr($data_sql[$i]['THREBP_HMS2'],strlen($data_sql[$i]['THREBP_HMS2'])-2,2)  ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THREBP_HME2'],0,strlen($data_sql[$i]['THREBP_HME2'])-4).' '.substr($data_sql[$i]['THREBP_HME2'],strlen($data_sql[$i]['THREBP_HME2'])-4,2).' '.substr($data_sql[$i]['THREBP_HME2'],strlen($data_sql[$i]['THREBP_HME2'])-2,2)  ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THRBNC_HMS1'],0,strlen($data_sql[$i]['THRBNC_HMS1'])-4).' '.substr($data_sql[$i]['THRBNC_HMS1'],strlen($data_sql[$i]['THRBNC_HMS1'])-4,2).' '.substr($data_sql[$i]['THRBNC_HMS1'],strlen($data_sql[$i]['THRBNC_HMS1'])-2,2)  ?></td>
+                <td class="tdTable1" ><?= substr($data_sql[$i]['THRBNC_HME1'],0,strlen($data_sql[$i]['THRBNC_HME1'])-4).' '.substr($data_sql[$i]['THRBNC_HME1'],strlen($data_sql[$i]['THRBNC_HME1'])-4,2).' '.substr($data_sql[$i]['THRBNC_HME1'],strlen($data_sql[$i]['THRBNC_HME1'])-2,2)  ?></td>
             </tr>
 <?php
             
