@@ -150,12 +150,12 @@
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_V2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THREBP_A2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['THRLIQ_TP1'],2,".",",") ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 1) echo "V"; ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 2) echo "V"; ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 3) echo "V"; ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 1) echo "V"; ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 2) echo "V"; ?></td>
-                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 3) echo "V"; ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 3) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB1'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 2) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB1'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB1'] == 1) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB1'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 3) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB2'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 2) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB2'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['THREBP_GB2'] == 1) {echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else if($data_sql[$i]['THREBP_GB2'] == 0) {echo '<img src = "'.$imagesPath.'/question-mark-orange.png'.'" alt="?" width="8" height="8" />';}  ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP1'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['THRPMP2'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
                 <td class="tdTable1" ><?= substr($data_sql[$i]['THREBP_HMS1'],0,strlen($data_sql[$i]['THREBP_HMS1'])-4).' '.substr($data_sql[$i]['THREBP_HMS1'],strlen($data_sql[$i]['THREBP_HMS1'])-4,2).' '.substr($data_sql[$i]['THREBP_HMS1'],strlen($data_sql[$i]['THREBP_HMS1'])-2,2)  ?></td>

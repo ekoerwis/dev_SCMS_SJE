@@ -236,9 +236,11 @@
         function gearBoxBaik(val,row){
 
             var returnVal ='';
-            if(  Number(val) == 1 ){
+            if(  Number(val) == 3 ){
                 returnVal = '<i class="fas fa-check"></i>';
-            } 
+            } else if(Number(val)==0){
+                returnVal = '<i class="fas fa-question" style="color: orange;"></i>';
+            }
             return  returnVal;
         }
 
@@ -247,16 +249,20 @@
             var returnVal ='';
             if( Number(val) == 2){
                 returnVal = '<i class="fas fa-check"></i>';
-            } 
+            } else if(Number(val)==0){
+                returnVal = '<i class="fas fa-question" style="color: orange;"></i>';
+            }
             return  returnVal;
         }
 
         function gearBoxKurang(val,row){
 
             var returnVal ='';
-            if(Number(val) == 3){
+            if(Number(val) == 1){
                 returnVal = '<i class="fas fa-check"></i>';
-            } 
+            } else if(Number(val)==0){
+                returnVal = '<i class="fas fa-question"  style="color: orange;"></i>';
+            }
             return  returnVal;
         }
         
