@@ -92,42 +92,43 @@
                 <!-- <th class="thTable1" rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
             <tr class="trHeadTable1">
-                <th class="thTable1" rowspan="3" field="TMP1" width="45px"><b>SAMPLE</b></th>
-                <th class="thTable1" rowspan="3" field="TMP2" width="45px"><b>USB</b></th>
-                <th class="thTable1" rowspan="3" field="VCM1" width="45px"><b>%</b></th>
-                <th class="thTable1" colspan="4" ><b>VOLT / AMPERE</b></th>
+                <th class="thTable1" rowspan="3" width="45px"><b>SAMPLE</b></th>
+                <th class="thTable1" rowspan="3" width="45px"><b>USB</b></th>
+                <th class="thTable1" rowspan="3" width="45px"><b>%</b></th>
+                <th class="thTable1" colspan="2" ><b>EBP I</b></th>
+                <th class="thTable1" colspan="2" ><b>EBP II</b></th>
                 <th class="thTable1" rowspan="2" ><b>BAK LIQUOR</b></th>
                 <th class="thTable1" colspan="6" ><b>KONDISI GEAR BOX</b></th>
                 <th class="thTable1" colspan="2" ><b>POMPA</b></th>
                 <th class="thTable1" colspan="6" ><b>HM</b></th>
             </tr>
             <tr class="trHeadTable1">
-                <th class="thTable1" rowspan="2" field="VCM2" width="45px"><b>EBP I</b></th>
-                <th class="thTable1" rowspan="2" field="CSTTMP1" width="45px"><b>EBP I</b></th>
-                <th class="thTable1" rowspan="2" field="CSTTMP2" width="45px"><b>EBP II</b></th>
-                <th class="thTable1" rowspan="2" field="CSTTMP3" width="45px"><b>EBP II</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>VOLT</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>AMPERE</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>VOLT</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>AMPERE</b></th>
                 <th class="thTable1" colspan="3" ><b>EBP I</b></th>
                 <th class="thTable1" colspan="3" ><b>EBP II</b></th>
-                <th class="thTable1" rowspan="2" field="CSTTMP4" width="45px"><b>NO. 1</b></th>
-                <th class="thTable1" rowspan="2" field="CSTTMP5" width="45px"><b>NO. 2</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>NO. 1</b></th>
+                <th class="thTable1" rowspan="2" width="45px"><b>NO. 2</b></th>
                 <th class="thTable1" colspan="2" ><b>EBP I</b></th>
                 <th class="thTable1" colspan="2" ><b>EBP II</b></th>
                 <th class="thTable1" colspan="2" ><b>BUNCH CRUISER</b></th>
             </tr>
             <tr class="trHeadTable1">
-                <th class="thTable1" field="THRLIQ_TP1" width="45px"><b>TEMP C</b></th>
-                <th class="thTable1" field="CSTTMP6" width="45px"><b>BAIK</b></th>
-                <th class="thTable1" field="CSTOLY1" width="45px"><b>NORMAL</b></th>
-                <th class="thTable1" field="CSTOLY2" width="45px"><b>KURANG</b></th>
-                <th class="thTable1" field="CSTOLY3" width="45px"><b>BAIK</b></th>
-                <th class="thTable1" field="CSTOLY4" width="45px"><b>NORMAL</b></th>
-                <th class="thTable1" field="CSTOLY5" width="45px"><b>KURANG</b></th>
-                <th class="thTable1" field="CSTOLY6" width="55px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP1" width="55px"><b>STOP</b></th>
-                <th class="thTable1" field="SDTTMP2" width="55px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP3" width="55px"><b>STOP</b></th>
-                <th class="thTable1" field="SDTTMP2" width="55px"><b>START</b></th>
-                <th class="thTable1" field="SDTTMP3" width="55px"><b>STOP</b></th>
+                <th class="thTable1" width="45px"><b>TEMP C</b></th>
+                <th class="thTable1" width="45px"><b>BAIK</b></th>
+                <th class="thTable1" width="45px"><b>NORMAL</b></th>
+                <th class="thTable1" width="45px"><b>KURANG</b></th>
+                <th class="thTable1" width="45px"><b>BAIK</b></th>
+                <th class="thTable1" width="45px"><b>NORMAL</b></th>
+                <th class="thTable1" width="45px"><b>KURANG</b></th>
+                <th class="thTable1" width="55px"><b>START</b></th>
+                <th class="thTable1" width="55px"><b>STOP</b></th>
+                <th class="thTable1" width="55px"><b>START</b></th>
+                <th class="thTable1" width="55px"><b>STOP</b></th>
+                <th class="thTable1" width="55px"><b>START</b></th>
+                <th class="thTable1" width="55px"><b>STOP</b></th>
             </tr>
         </thead>
         <tbody>

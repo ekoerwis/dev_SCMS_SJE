@@ -36,17 +36,18 @@
                 <th rowspan="3" field="THRSMP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>SAMPLE</b></th>
                 <th rowspan="3" field="THRUSB" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>USB</b></th>
                 <th rowspan="3" field="THRPER" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>%</b></th>
-                <th colspan="4" ><b>VOLT / AMPERE</b></th>
+                <th colspan="2" ><b>EBP I</b></th>
+                <th colspan="2" ><b>EBP II</b></th>
                 <th rowspan="2" ><b>BAK LIQOUR</b></th>
                 <th colspan="6" ><b>KONDISI GEAR BOX</b></th>
                 <th colspan="2" ><b>POMPA</b></th>
                 <th colspan="6" ><b>HM</b></th>
             </tr>
             <tr>
-                <th rowspan="2" field="THREBP_V1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP I</b></th>
-                <th rowspan="2" field="THREBP_A1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP I</b></th>
-                <th rowspan="2" field="THREBP_V2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP II</b></th>
-                <th rowspan="2" field="THREBP_A2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP II</b></th>
+                <th rowspan="2" field="THREBP_V1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>VOLT</b></th>
+                <th rowspan="2" field="THREBP_A1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMPERE</b></th>
+                <th rowspan="2" field="THREBP_V2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>VOLT</b></th>
+                <th rowspan="2" field="THREBP_A2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMPERE</b></th>
                 <th colspan="3" ><b>EBP I</b></th>
                 <th colspan="3" ><b>EBP II</b></th>
                 <th rowspan="2" field="THRPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO. 1</b></th>
