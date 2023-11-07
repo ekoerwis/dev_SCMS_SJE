@@ -291,7 +291,7 @@
                 var Detik = val.substr(lengthVal-2,2);
 
 
-                returnVal = Jam+' '+Menit+' '+Detik;
+                returnVal = Jam+'.'+Menit+'.'+Detik;
             } 
             return  returnVal;
         }
