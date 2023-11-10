@@ -96,6 +96,7 @@
                 <th class="thTable1" colspan=3 style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;">KELUAR BUAH</th>
                 <!-- <th class="thTable1" rowspan=2  style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;" width="50px">WAKTU</th> -->
                 <th class="thTable1" rowspan=2  style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;" width="50px">TOTAL WAKTU</th>
+                <th class="thTable1" rowspan=2  style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;" width="50px">TEMP (<span>&#176;</span>C)</th>
                 <th class="thTable1" rowspan=2  style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;" width="100px">PARAF MANDOR</th>
                 <th class="thTable1" rowspan=2  style="border: 1px solid black;border-collapse: collapse;text-align: center; font-size: 7pt;" width="100px">KETERANGAN</th>
             </tr>
@@ -142,6 +143,7 @@
                 <td class="tdTable1" style="text-align: center;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZOUT_ED_TIME'] ?></td>
                 <td class="tdTable1" style="text-align: right;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZOUT_MN'] ?></td>
                 <td class="tdTable1" style="text-align: right;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZTM_TOT'] ?></td>
+                <td class="tdTable1" style="text-align: right;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZTMP1'] ?></td>
                 <td class="tdTable1" style="text-align: right;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZACC'] ?></td>
                 <td class="tdTable1" style="text-align: right;border-collapse: collapse; border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;"><?= $data_sql[$i]['STZNOTE'] ?></td>
             </tr>
