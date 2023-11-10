@@ -9,7 +9,7 @@ class logSheetNetModel extends \App\Models\BaseModel
 		parent::__construct();
 	}
 
-    public function reportSqlString($tdate='' ,$dt_div=''){
+    public function reportSqlString($tdate='' ,$dt_div='', $ST_HR=0, $END_HR=23){
 
         $w_tdate = " ";
         $w_dt_div = " ";
@@ -25,7 +25,7 @@ class logSheetNetModel extends \App\Models\BaseModel
         $sql="
         SELECT NETID, COMP_ID, SITE_ID, POSTDT, NETDIV, NETADD, NETHR, NETCHK, NETCNT, NETMSG 
         FROM POM_LGS_NET
-        WHERE UPPER(NETCHK) <> 'OK'AND ROWNUM > 0  $w_tdate $w_dt_div
+        WHERE UPPER(NETCHK) <> 'OK'AND ROWNUM > 0 AND NETHR BETWEEN $ST_HR AND $END_HR $w_tdate $w_dt_div
         ";
 
         return $sql;
@@ -35,7 +35,7 @@ class logSheetNetModel extends \App\Models\BaseModel
     {
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
-        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'NETADD, NETHR';
+        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'NETHR';
         $order = isset($_POST['order']) ? strval($_POST['order']) : 'ASC';
         
         $userOrganisasi=$this->session->get('userOrganisasi');
@@ -51,8 +51,10 @@ class logSheetNetModel extends \App\Models\BaseModel
 		}
 
         $DT_DIV = isset($_POST['DT_DIV']) ? strval($_POST['DT_DIV']) : '';
+        $ST_HR = isset($_POST['ST_HR']) ? intval($_POST['ST_HR']) : 0;
+        $END_HR = isset($_POST['END_HR']) ? intval($_POST['END_HR']) : 23;
 
-        $sqlReport = $this->reportSqlString($TDATE, $DT_DIV );
+        $sqlReport = $this->reportSqlString($TDATE, $DT_DIV, $ST_HR, $END_HR);
 
         $mainSql="SELECT * FROM ($sqlReport) WHERE ROWNUM > 0";
 
@@ -80,7 +82,7 @@ class logSheetNetModel extends \App\Models\BaseModel
 
     public function dataListExcel()
     {   
-        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'NETADD, NETHR';
+        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'NETHR';
         $order = isset($_POST['order']) ? strval($_POST['order']) : 'ASC';
         
 
@@ -91,10 +93,12 @@ class logSheetNetModel extends \App\Models\BaseModel
 		}
 
         $DT_DIV = isset($_GET['DT_DIV']) ? strval($_GET['DT_DIV']) : '';
+        $ST_HR = isset($_GET['ST_HR']) ? intval($_GET['ST_HR']) : 0;
+        $END_HR = isset($_GET['END_HR']) ? intval($_GET['END_HR']) : 23;
 
         $result = array();
 
-        $sqlReport = $this->reportSqlString($TDATE, $DT_DIV);
+        $sqlReport = $this->reportSqlString($TDATE, $DT_DIV, $ST_HR, $END_HR);
         $sql = "SELECT * FROM ( $sqlReport ) WHERE ROWNUM > 0
         ORDER BY $sort $order ";
         

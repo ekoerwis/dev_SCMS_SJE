@@ -327,34 +327,7 @@ class logSheetNet extends \App\Controllers\BaseController
 
         $mpdf->SetHTMLHeader($headerPdf);
 
-        $footerPdf = '<table style="width:100%;font-size: 6pt; border-collapse: collapse;">
-        <tr>
-            <td colspan=2 style=" width:12.5%; text-align: center;border: 1px solid black;">Dibuat</td>
-            <td colspan=2 style=" width:12.5%; text-align: center;border: 1px solid black;">Diperiksa</td>
-            <td style=" width:12.5%; text-align: center;border: 1px solid black;">Disetujui </td>
-            <td style=" width:12.5%; text-align: center;border: 1px solid black;">Diketahui</td>
-            <td colspan=2 style=" width:12.5%; text-align: center;"> </td>
-        </tr>
-        <tr>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td style=" width:12.5%;height:60px;border: 1px solid black;"></td>
-            <td colspan=2 style="width:12.5%;height:60px; text-align: center;vertical-align: top;">FM Condensate</td>
-        </tr>
-        <tr>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Opt. Proses A</td>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Opt. Proses B</td>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Ast. Proses A</td>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Ast. Proses B</td>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Asst Mill</td>
-            <td style=" width:12.5%;text-align: center;border: 1px solid black;">Mill Manager</td>
-            <td style=" width:12.5%;"></td>
-            <td style=" width:12.5%;"></td>
-        </tr>
-        </table>
+        $footerPdf = '
         ';
 
         // <tr><td style="text-align:left;">Jam Kerja</td><td>:</td><td>{PAGENO} of {nbpg}</td></tr>

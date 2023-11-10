@@ -33,6 +33,15 @@
             <div class="col row">
                 <input id="dt-tdate" name="TDATE" class="easyui-datebox" style="width: 150px;"  data-options="required:true">
                 <input id="cb-dt_div" name="DT_DIV" class="" style="width:200px;" >
+                <div class = 'form-group-inline'>
+                    &nbsp;
+                    Jam : 
+                    <input id="ns-startHr" class="easyui-numberspinner" value="0" data-options="min:0,max:23" style="width:100px;" prompt="Dari Jam">
+                    &nbsp;
+                    s/d
+                    &nbsp;
+                    <input id="ns-endHr" class="easyui-numberspinner" value="23" data-options="min:0,max:23" style="width:100px;" prompt="Sampai Jam">
+                </div>
                 <!-- <div class="col-xl-3 col-lg-3 col-md-3 row"> -->
                     <!-- <input id="tb-Year" name="YEARNUMBER" class="easyui-numberbox " style="width: 100px;"  data-options="required:true" prompt="Year"> -->
                     <!-- <input id="cg-MonthNumber" name="MONTHNUMBER" class="easyui-combogrid" style="width: 200px;"  data-options="required:true" prompt="Month"> -->
@@ -148,12 +157,16 @@
             $('#dg').datagrid('load', {
                 TDATE: $('#dt-tdate').datebox('getValue'),
                 DT_DIV: $('#cb-dt_div').combobox('getValue'),
+                ST_HR: $('#ns-startHr').numberspinner('getValue'),
+                END_HR: $('#ns-endHr').numberspinner('getValue'),
             });
         }
 
         function doSearchReset() {
             $('#dt-tdate').datebox('reset');
             $('#cb-dt_div').combobox('reset');
+            $('#ns-startHr').numberspinner('reset');
+            $('#ns-endHr').numberspinner('reset');
 
         }
 
@@ -171,6 +184,8 @@
         
             var dateParam = $('#dt-tdate').datebox('getValue');
             var dtDivParam =  $('#cb-dt_div').combobox('getValue');
+            var ST_HR =  $('#ns-startHr').numberspinner('getValue');
+            var END_HR = $('#ns-endHr').numberspinner('getValue');
 
             if( dateParam.trim() == '' || dateParam.trim() == null ){
                 alert('"Tanggal" Harus Di Isi Dahulu');
@@ -178,7 +193,7 @@
                 exit;   
             } 
 
-            var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetNet/exportExcelFile?TDATE='; ?>"+dateParam+"&DT_DIV="+dtDivParam;
+            var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetNet/exportExcelFile?TDATE='; ?>"+dateParam+"&DT_DIV="+dtDivParam+"&ST_HR="+ST_HR+"&END_HR="+END_HR;
             window.open(url, "_blank");
         }
 
@@ -186,6 +201,8 @@
         
             var dateParam = $('#dt-tdate').datebox('getValue');
             var dtDivParam =  $('#cb-dt_div').combobox('getValue');
+            var ST_HR =  $('#ns-startHr').numberspinner('getValue');
+            var END_HR = $('#ns-endHr').numberspinner('getValue');
 
             if( dateParam.trim() == '' || dateParam.trim() == null ){
                 alert('"Tanggal" Harus Di Isi Dahulu');
@@ -193,8 +210,8 @@
                 exit;   
             } 
 
-            var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetNet/exportPDFFile?TDATE='; ?>"+dateParam+"&DT_DIV="+dtDivParam;
+            var url = "<?php  echo site_url() . '/../Content/LogSheet/logSheetNet/exportPDFFile?TDATE='; ?>"+dateParam+"&DT_DIV="+dtDivParam+"&ST_HR="+ST_HR+"&END_HR="+END_HR;
             window.open(url, "_blank");
-    }
+        }
 
     </script>   
