@@ -107,7 +107,7 @@ class logSheetSterilizer extends \App\Controllers\BaseController
 
         $spreadsheet
         ->getActiveSheet()
-        ->getStyle('A5:O6')
+        ->getStyle('A5:P6')
         ->getBorders()
         ->getAllBorders()
         ->setBorderStyle(Border::BORDER_THIN);
@@ -125,11 +125,12 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         $spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(73, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(108,'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(73, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('N')->setWidth(140, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(220, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('N')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(140, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('P')->setWidth(220, 'px');
 
-        $spreadsheet->getActiveSheet()->getStyle('A5:O6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-        $spreadsheet->getActiveSheet()->getStyle('A5:O6')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:P6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:P6')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
 
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getFont()->setBold(true);
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -148,13 +149,13 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         $sheet->mergeCells('F3:J3');
         $sheet->setCellValue('F3', 'STERILIZER STATION LOG SHEET');
 
-        $sheet->setCellValue('M1', 'HARI/TANGGAL');
-        $sheet->setCellValue('M2', 'SHIFT');
-        $sheet->setCellValue('M3', 'JAM KERJA');
+        $sheet->setCellValue('O1', 'HARI/TANGGAL');
+        $sheet->setCellValue('O2', 'SHIFT');
+        $sheet->setCellValue('O3', 'JAM KERJA');
         
-        $sheet->setCellValue('N1', ': '.$hari.','.$data_db['TDATE']);
-        $sheet->setCellValue('N2', ': ');
-        $sheet->setCellValue('N3', ': ');
+        $sheet->setCellValue('P1', ': '.$hari.','.$data_db['TDATE']);
+        $sheet->setCellValue('P2', ': ');
+        $sheet->setCellValue('P3', ': ');
         // BATAS HEADER
 
         // TABLE HEADER
@@ -196,10 +197,13 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         $sheet->setCellValue('M5', 'TEMP '.'(C)');
 
         $sheet->mergeCells('N5:N6');
-        $sheet->setCellValue('N5', 'PARAF MANDOR');
+        $sheet->setCellValue('N5', 'TEMP AUTOFEED'.'(C)');
 
         $sheet->mergeCells('O5:O6');
-        $sheet->setCellValue('O5', 'KETERANGAN');
+        $sheet->setCellValue('O5', 'PARAF MANDOR');
+
+        $sheet->mergeCells('P5:P6');
+        $sheet->setCellValue('P5', 'KETERANGAN');
 
         // BATAS TABLE HEADER
 
@@ -209,7 +213,7 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         foreach ($data_parameter as $val) {
             $spreadsheet
             ->getActiveSheet()
-            ->getStyle('A7:O' . $rows)
+            ->getStyle('A7:P' . $rows)
             ->getBorders()
             ->getAllBorders()
             ->setBorderStyle(Border::BORDER_THIN);
@@ -229,8 +233,9 @@ class logSheetSterilizer extends \App\Controllers\BaseController
             $sheet->setCellValue('K' . $rows, $val['STZOUT_MN']);
             $sheet->setCellValue('L' . $rows, $val['STZTM_TOT']);
             $sheet->setCellValue('M' . $rows, $val['STZTMP1']);
-            $sheet->setCellValue('N' . $rows, $val['STZACC']);
-            $sheet->setCellValue('O' . $rows, $val['STZNOTE']);
+            $sheet->setCellValue('N' . $rows, $val['STZBAF1']);
+            $sheet->setCellValue('O' . $rows, $val['STZACC']);
+            $sheet->setCellValue('P' . $rows, $val['STZNOTE']);
 
 
             $rows++;
