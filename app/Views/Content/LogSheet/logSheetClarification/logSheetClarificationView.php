@@ -31,7 +31,7 @@
                 <th rowspan="2"><b>VACUUM 1</b></th>
                 <th rowspan="2"><b>VACUUM 2</b></th>
                 <th rowspan="2"><b>ROT</b></th>
-                <th colspan="6"><b>CONTINOUS SETTING TANK</b></th>
+                <th colspan="6"><b>CONTINOUS SETLING TANK</b></th>
                 <th colspan="2"><b>SAND TRAP TANK</b></th>
                 <th colspan="2"><b>SLUDGE TANK</b></th>
                 <th colspan="2"><b>TEMP SLUDGE SEPARATOR</b></th>

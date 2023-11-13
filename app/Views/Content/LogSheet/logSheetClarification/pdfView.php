@@ -88,7 +88,7 @@
                 <th rowspan="2" class="thTable1"  ><b>VACUUM 1</b></th>
                 <th rowspan="2" class="thTable1"  ><b>VACUUM 2</b></th>
                 <th rowspan="2" class="thTable1"  ><b>ROT</b></th>
-                <th colspan="6" class="thTable1"  ><b>CONTINOUS SETTING TANK</b></th>
+                <th colspan="6" class="thTable1"  ><b>CONTINOUS SETLING TANK</b></th>
                 <th colspan="2" class="thTable1"  ><b>SAND TRAP TANK</b></th>
                 <th colspan="2" class="thTable1"  ><b>SLUDGE TANK</b></th>
                 <th colspan="2" class="thTable1"  ><b>TEMP SLUDGE SEPARATOR</b></th>
