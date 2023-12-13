@@ -10,6 +10,13 @@
 		height:auto;
 	    white-space: normal;
 	}
+
+    .datagrid-group-title {
+        position: fixed;
+        /* top: 0;
+        z-index: 1;
+        background-color: #f5f5f5; Warna latar belakang yang diinginkan */
+    }
 </style>
     
     <!--- DATA GRID ------------------------------------------------------------------------->
