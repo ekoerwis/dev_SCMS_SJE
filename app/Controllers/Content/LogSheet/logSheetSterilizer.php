@@ -107,7 +107,7 @@ class logSheetSterilizer extends \App\Controllers\BaseController
 
         $spreadsheet
         ->getActiveSheet()
-        ->getStyle('A5:P6')
+        ->getStyle('A5:Q6')
         ->getBorders()
         ->getAllBorders()
         ->setBorderStyle(Border::BORDER_THIN);
@@ -126,11 +126,12 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         $spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(108,'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(73, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('N')->setWidth(90, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(140, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('P')->setWidth(220, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('P')->setWidth(140, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('Q')->setWidth(220, 'px');
 
-        $spreadsheet->getActiveSheet()->getStyle('A5:P6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-        $spreadsheet->getActiveSheet()->getStyle('A5:P6')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:Q6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:Q6')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
 
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getFont()->setBold(true);
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -197,13 +198,16 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         $sheet->setCellValue('M5', 'TEMP '.'(C)');
 
         $sheet->mergeCells('N5:N6');
-        $sheet->setCellValue('N5', 'TEMP AUTOFEED'.'(C)');
+        $sheet->setCellValue('N5', 'STEAM');
 
         $sheet->mergeCells('O5:O6');
-        $sheet->setCellValue('O5', 'PARAF MANDOR');
+        $sheet->setCellValue('O5', 'TEMP AUTOFEED'.'(C)');
 
         $sheet->mergeCells('P5:P6');
-        $sheet->setCellValue('P5', 'KETERANGAN');
+        $sheet->setCellValue('P5', 'PARAF MANDOR');
+
+        $sheet->mergeCells('Q5:Q6');
+        $sheet->setCellValue('Q5', 'KETERANGAN');
 
         // BATAS TABLE HEADER
 
@@ -213,7 +217,7 @@ class logSheetSterilizer extends \App\Controllers\BaseController
         foreach ($data_parameter as $val) {
             $spreadsheet
             ->getActiveSheet()
-            ->getStyle('A7:P' . $rows)
+            ->getStyle('A7:Q' . $rows)
             ->getBorders()
             ->getAllBorders()
             ->setBorderStyle(Border::BORDER_THIN);
@@ -233,9 +237,10 @@ class logSheetSterilizer extends \App\Controllers\BaseController
             $sheet->setCellValue('K' . $rows, $val['STZOUT_MN']);
             $sheet->setCellValue('L' . $rows, $val['STZTM_TOT']);
             $sheet->setCellValue('M' . $rows, $val['STZTMP1']);
-            $sheet->setCellValue('N' . $rows, $val['STZBAF1']);
-            $sheet->setCellValue('O' . $rows, $val['STZACC']);
-            $sheet->setCellValue('P' . $rows, $val['STZNOTE']);
+            $sheet->setCellValue('N' . $rows, $val['STZSTMPV1']);
+            $sheet->setCellValue('O' . $rows, $val['STZBAF1']);
+            $sheet->setCellValue('P' . $rows, $val['STZACC']);
+            $sheet->setCellValue('Q' . $rows, $val['STZNOTE']);
 
 
             $rows++;

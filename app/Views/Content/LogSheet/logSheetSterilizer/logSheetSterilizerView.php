@@ -29,6 +29,7 @@
                 <!-- <th field="STZACC" halign="center" data-options="sortable:false,width:100,align:'left' " formatter="" rowspan="2"><b>Paraf Mandor</b></th> -->
                 <!-- <th field="STZNOTE" halign="center" data-options="sortable:false,width:200,align:'left' " formatter="" rowspan="2"><b>Keterangan</b></th> -->
                 <th field="STZTMP1" halign="center" data-options="sortable:false,width:80,align:'center' "  rowspan="2" formatter=""><b>Temp ( <span>&#176;</span>C )</b></th>
+                <th field="STZSTMPV1" halign="center" data-options="sortable:false,width:80,align:'center' "  rowspan="2" formatter=""><b>Steam</b></th>
                 <th field="STZBAF1" halign="center" data-options="sortable:false,width:80,align:'center' "  rowspan="2" formatter=""><b>Temp Autofeed (<span>&#176;</span>C)</b></th>
             </tr>
             <tr>
