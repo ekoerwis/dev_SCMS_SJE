@@ -664,7 +664,7 @@
                         display: true,
                         title: {
                             display: true,
-                            text: 'Pressure(mBarg)',
+                            text: 'Pressure(Bar)',
                             color: '#2873d0',
                             font: {
                                 // family: 'Comic Sans MS',
@@ -736,7 +736,7 @@ function generateChart7(xValues7, yValues7, tdate,iNumbers) {
                         display: true,
                         title: {
                             display: true,
-                            text: 'Pressure(mBarg)',
+                            text: 'Pressure(Bar)',
                             color: '#2873d0',
                             font: {
                                 // family: 'Comic Sans MS',

@@ -16,6 +16,9 @@ class historicalPressureChartModel extends \App\Models\BaseModel
         $TDATE  =  isset($_POST['TDATE']) ? date("d/M/Y", strtotime($_POST['TDATE'])):'';
         $DIVID  =  isset($_POST['DIVID']) ? strval($_POST['DIVID']):'0';
 
+        $div_id = intval($DIVID)-130;
+        $dt_add = 'PSPV'.$div_id.'1';
+
         $sql = "SELECT  PERIODE,
         MBARG,
         BAR,
@@ -30,7 +33,7 @@ SELECT POSTDT PERIODE,
        TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME) ROUND_TM, 
        LAG(TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME), 1, 0) OVER (ORDER BY DT_UEP) AS LAG_TM
   FROM SCD_TRHISTORY
- WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = 'PVPS1'
+ WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = '$dt_add'
 ORDER BY DT_UEP)
 WHERE ROUND_TM <> LAG_TM";
         
@@ -46,7 +49,7 @@ WHERE ROUND_TM <> LAG_TM";
         $BYTIME  =  isset($_POST['BYTIME']) ? intval($_POST['BYTIME']):1;
         $TDATE  =  isset($_POST['TDATE']) ? date("d/M/Y", strtotime($_POST['TDATE'])):'';
         // $DIVID  =  isset($_POST['DIVID']) ? strval($_POST['DIVID']):'191';
-        $DIVID  =  '191';
+        $DIVID  =  '130';
 
         $sql = "SELECT  PERIODE,
         MBARG,
@@ -62,7 +65,7 @@ SELECT POSTDT PERIODE,
        TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME) ROUND_TM, 
        LAG(TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME), 1, 0) OVER (ORDER BY DT_UEP) AS LAG_TM
   FROM SCD_TRHISTORY
- WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = 'BPV1' AND DT_TYPE='PVPS'
+ WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = 'STZBPVPS' AND DT_TYPE='PS'
 ORDER BY DT_UEP)
 WHERE ROUND_TM <> LAG_TM";
         
@@ -78,7 +81,7 @@ WHERE ROUND_TM <> LAG_TM";
         $BYTIME  =  isset($_POST['BYTIME']) ? intval($_POST['BYTIME']):1;
         $TDATE  =  isset($_POST['TDATE']) ? date("d/M/Y", strtotime($_POST['TDATE'])):'';
         // $DIVID  =  isset($_POST['DIVID']) ? strval($_POST['DIVID']):'191';
-        $DIVID  =  '191';
+        $DIVID  =  '130';
 
         $sql = "SELECT  PERIODE,
         MBARG,
@@ -94,7 +97,7 @@ SELECT POSTDT PERIODE,
        TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME) ROUND_TM, 
        LAG(TO_CHAR (FS_CONV_UTCUEP2WIB (DT_UEP), 'hh24')||':'||CEIL((TO_NUMBER(TO_CHAR(FS_CONV_UTCUEP2WIB (DT_UEP), 'mi'))+1)/$BYTIME), 1, 0) OVER (ORDER BY DT_UEP) AS LAG_TM
   FROM SCD_TRHISTORY
- WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = 'TBN1' AND DT_TYPE='PVPS'
+ WHERE DT_DIV = '$DIVID' AND POSTDT = '$TDATE' AND DT_ADD = 'STZBOIPS' AND DT_TYPE='PS'
 ORDER BY DT_UEP)
 WHERE ROUND_TM <> LAG_TM";
         
