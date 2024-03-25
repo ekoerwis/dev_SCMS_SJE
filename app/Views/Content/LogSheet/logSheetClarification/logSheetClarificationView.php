@@ -61,6 +61,7 @@
             </tr>
             <tr>
                 <th field="DOC" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>DCO</b></th>
+                <th field="COTTMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>COT</b></th>
                 <th field="OITTMP1" halign="center" data-options="sortable:false,width:80,align:'center' " formatter="formatNumberColumnCostum"><b>OIL TANK 1</b></th>
                 <th field="OITTMP2" halign="center" data-options="sortable:false,width:80,align:'center' " formatter="formatNumberColumnCostum"><b>OIL TANK 2</b></th>
                 <th field="VCMCH1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>mmHg</b></th>

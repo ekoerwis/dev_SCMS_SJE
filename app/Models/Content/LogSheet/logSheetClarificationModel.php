@@ -40,7 +40,7 @@ class logSheetClarificationModel extends \App\Models\BaseModel
         SPHME1, SPHME2, SPHME3, 
         DCHMS1, DCHMS2, DCHMS3, 
         DCHME1, DCHME2, DCHME3, 
-        OSS1, VERMD1, USRMD1 FROM POM_LGS_CLR WHERE POSTDT =  TO_DATE('$tdate','dd/mon/yyyy') ORDER BY SEQ
+        OSS1, VERMD1, USRMD1, COTTMP1 FROM POM_LGS_CLR WHERE POSTDT =  TO_DATE('$tdate','dd/mon/yyyy') ORDER BY SEQ
         ";
 
         return $sql;
@@ -117,7 +117,7 @@ class logSheetClarificationModel extends \App\Models\BaseModel
         SPHME1, SPHME2, SPHME3, 
         DCHMS1, DCHMS2, DCHMS3, 
         DCHME1, DCHME2, DCHME3, 
-        OSS1, VERMD1, USRMD1,
+        OSS1, VERMD1, USRMD1, COTTMP1, 
         ROWNUM AS RNUM FROM ( $mainSql ORDER BY $sort $order) WHERE ROWNUM <= $limit) WHERE RNUM > $offset";
         
         $sql = $this->db->query($sql)->getResultArray();

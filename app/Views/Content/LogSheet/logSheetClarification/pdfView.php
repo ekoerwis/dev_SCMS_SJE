@@ -84,7 +84,7 @@
         <thead>
             <tr class="trHeadTable1">
                 <th rowspan="3" class="thTable1"  width="35px"><b>JAM</b></th>
-                <th colspan="3" rowspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
+                <th colspan="4" rowspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
                 <th rowspan="2" class="thTable1"  ><b>VACUUM 1</b></th>
                 <th rowspan="2" class="thTable1"  ><b>VACUUM 2</b></th>
                 <th rowspan="2" class="thTable1"  ><b>ROT</b></th>
@@ -114,6 +114,7 @@
             </tr>
             <tr class="trHeadTable1">
                 <th class="thTable1"  width="40px"><b>DCO</b></th>
+                <th class="thTable1"  width="40px"><b>COT</b></th>
                 <th class="thTable1"  width="60px" ><b>OIL TANK 1</b></th>
                 <th class="thTable1"  width="60px" ><b>OIL TANK 2</b></th>
                 <th class="thTable1"  width="35px" ><b>mmHg</b></th>
@@ -159,6 +160,7 @@
             <tr>
                 <td class="tdTable1" ><?= $data_sql[$i]['TIME_DISP'] ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['DOC'] > 0) echo number_format($data_sql[$i]['DOC'],2,".",","); ?></td>
+                <td class="tdTable1" ><?php if($data_sql[$i]['COTTMP1'] > 0) echo number_format($data_sql[$i]['COTTMP1'],2,".",","); ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['OITTMP1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['OITTMP2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['VCMCH1'],2,".",",") ?></td>
