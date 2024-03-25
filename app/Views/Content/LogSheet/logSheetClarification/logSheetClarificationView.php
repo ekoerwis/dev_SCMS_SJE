@@ -27,7 +27,7 @@
                     ">
         <thead>
             <tr>
-                <th colspan="3" rowspan="2"><b>TEMP ( <span>&#176;</span>C )</b></th>
+                <th colspan="4" rowspan="2"><b>TEMP ( <span>&#176;</span>C )</b></th>
                 <th rowspan="2"><b>VACUUM 1</b></th>
                 <th rowspan="2"><b>VACUUM 2</b></th>
                 <th rowspan="2"><b>ROT</b></th>
