@@ -297,7 +297,7 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $sheet->mergeCells('A5:A7');
         $sheet->setCellValue('A5', 'JAM');
 
-        $sheet->mergeCells('B5:F7');
+        $sheet->mergeCells('B5:F6');
         $sheet->setCellValue('B5', 'DIGESTER MASS TEMP( oC )');
         $sheet->setCellValue('B7', 'NO.1');
         $sheet->setCellValue('C7', 'NO.2');
@@ -305,7 +305,7 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $sheet->setCellValue('E7', 'NO.4');
         $sheet->setCellValue('F7', 'NO.5');
 
-        $sheet->mergeCells('G5:K7');
+        $sheet->mergeCells('G5:K6');
         $sheet->setCellValue('G5', 'DIGESTER LOAD (AMP)');
         $sheet->setCellValue('G7', 'NO.1');
         $sheet->setCellValue('H7', 'NO.2');
@@ -313,7 +313,7 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $sheet->setCellValue('J7', 'NO.4');
         $sheet->setCellValue('K7', 'NO.5');        
 
-        $sheet->mergeCells('L5:P7');
+        $sheet->mergeCells('L5:P6');
         $sheet->setCellValue('L5', 'PRESS CONE PRESSURE (BAR)');
         $sheet->setCellValue('L7', 'NO.1');
         $sheet->setCellValue('M7', 'NO.2');
