@@ -254,7 +254,7 @@ class logSheetClarification extends \App\Controllers\BaseController
         $titleSite =$this->logSheetClarificationModel->getSCD_MA_PARAM('ORG','ORGSITELONG')[0]['VALSTR'];
         
 
-        $fileName = 'writable/filedownload/logSheetCPOStorageTank_'.$userid.'.xlsx';
+        $fileName = 'writable/filedownload/logSheetClarification_'.$userid.'.xlsx';
         $spreadsheet = new Spreadsheet();
 
         $spreadsheet->getActiveSheet()->setShowGridlines(false);
