@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Color;
 
 
 
@@ -231,7 +232,328 @@ class logSheetClarification extends \App\Controllers\BaseController
         
 	}
 
+    public function exportExcelFile()
+    {
+        $this->cekHakAkses('READ_DATA');
+        $data = $this->data;
+        $data_parameter = $this->logSheetClarificationModel->dataListExcel();
 
+        
+        if (empty($_GET['TDATE'])) {
+			$data_db['TDATE'] = '';
+		} else {
+			$data_db['TDATE'] =  date("d-M-y", strtotime($_GET['TDATE']));
+
+            $hari = $this->indonesiaDays(date("l", strtotime($_GET['TDATE'])));
+		}
+
+        $userOrganisasi = $this->session->get('userOrganisasi');
+        $userid = $userOrganisasi['LOGINID'];
+
+        $titleOrg =$this->logSheetClarificationModel->getSCD_MA_PARAM('ORG','ORGPRN')[0]['VALSTR'];
+        $titleSite =$this->logSheetClarificationModel->getSCD_MA_PARAM('ORG','ORGSITELONG')[0]['VALSTR'];
+        
+
+        $fileName = 'writable/filedownload/logSheetCPOStorageTank_'.$userid.'.xlsx';
+        $spreadsheet = new Spreadsheet();
+
+        $spreadsheet->getActiveSheet()->setShowGridlines(false);
+
+        $spreadsheet
+        ->getActiveSheet()
+        ->getStyle('A5:AH7')
+        ->getBorders()
+        ->getAllBorders()
+        ->setBorderStyle(Border::BORDER_THIN);
+
+        $spreadsheet->getActiveSheet()->getColumnDimension('A')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(80, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(80, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(80, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(80, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(80, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('N')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('P')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('Q')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('R')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('S')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('T')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('U')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('V')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('W')->setWidth(73, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('X')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('Y')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('Z')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AA')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AB')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AC')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AD')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AE')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AF')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AG')->setWidth(100, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AH')->setWidth(100, 'px');
+
+        $spreadsheet->getActiveSheet()->getStyle('A5:AH7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AH7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AH7')->getAlignment()->setWrapText(true);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AH7')->getFont()->setBold(true);
+
+        $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getFont()->setBold(true);
+        $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+
+        
+        $sheet = $spreadsheet->getActiveSheet();
+        
+        // HEADER
+        $sheet->mergeCells('A1:E1');
+        $sheet->setCellValue('A1', $titleOrg);
+        $sheet->mergeCells('A2:D2');
+        $sheet->setCellValue('A2', $titleSite);
+        $sheet->mergeCells('A3:D3');
+        $sheet->setCellValue('A3', 'PALM OIL MILL');
+
+        $sheet->mergeCells('F3:J3');
+        $sheet->setCellValue('F3', 'CLARIFICATION STATION LOG SHEET');
+
+        $sheet->setCellValue('M1', 'HARI/TANGGAL');
+        $sheet->setCellValue('M2', 'SHIFT');
+        $sheet->setCellValue('M3', 'JAM KERJA');
+        
+        $sheet->setCellValue('N1', ': '.$hari.','.$data_db['TDATE']);
+        $sheet->setCellValue('N2', ': ');
+        $sheet->setCellValue('N3', ': ');
+        // BATAS HEADER
+
+        // TABLE HEADER
+        $sheet->mergeCells('A5:A7');
+        $sheet->setCellValue('A5', 'NO');
+        $sheet->mergeCells('B5:B7');
+        $sheet->setCellValue('B5', 'JAM');
+        
+        $sheet->mergeCells('C5:F6');
+        $sheet->setCellValue('C5', 'TEMP  ( °C )');
+        $sheet->setCellValue('C7', 'DCO');
+        $sheet->setCellValue('D7', 'COT');
+        $sheet->setCellValue('E7', 'OIL TANK 1');
+        $sheet->setCellValue('F7', 'OIL TANK 2');
+        // $sheet->mergeCells('E5:E6');
+        // $spreadsheet->getActiveSheet()->getStyle('E5:E6')->getAlignment()->setWrapText(true);
+        // $sheet->setCellValue('E5', 'WAKTU');
+
+        $sheet->mergeCells('G5:G6');
+        $sheet->setCellValue('G5', 'VACUM 1');
+        $sheet->setCellValue('G7', 'mmHg');
+
+        $sheet->mergeCells('H5:H6');
+        $sheet->setCellValue('H5', 'VACUM 2');
+        $sheet->setCellValue('H7', 'mmHg');
+        
+        $sheet->mergeCells('I5:I6');
+        $sheet->setCellValue('I5', 'ROT');
+        $sheet->setCellValue('I7', ' ( °C )');
+        // $sheet->mergeCells('H5:H6');
+        // $spreadsheet->getActiveSheet()->getStyle('H5:H6')->getAlignment()->setWrapText(true);
+
+        $sheet->mergeCells('J5:O5');
+        $sheet->setCellValue('J5', 'CONTINOUS SETLING TANK');
+        $sheet->mergeCells('J6:L6');
+        $sheet->setCellValue('J6', 'TEMP  ( °C )');
+        $sheet->setCellValue('J7', 'NO.1');
+        $sheet->setCellValue('K7', 'NO.2');
+        $sheet->setCellValue('L7', 'NO.3');
+        $sheet->mergeCells('M6:O6');
+        $sheet->setCellValue('M6', 'TEMP  ( °C )');
+        $sheet->setCellValue('M7', 'NO.1');
+        $sheet->setCellValue('N7', 'NO.2');
+        $sheet->setCellValue('O7', 'NO.3');
+        
+        $sheet->mergeCells('P5:Q5');
+        $sheet->setCellValue('P5', 'SAND TRAP TANK');
+        $sheet->mergeCells('P6:Q6');
+        $sheet->setCellValue('P6', 'TEMP ( °C )');
+        $sheet->setCellValue('P7', 'NO.1');
+        $sheet->setCellValue('Q7', 'NO.2');
+
+        $sheet->mergeCells('R5:S5');
+        $sheet->setCellValue('R5', 'SLUDGE TANK');
+        $sheet->mergeCells('R6:S6');
+        $sheet->setCellValue('R6', 'TEMP ( °C )');
+        $sheet->setCellValue('R7', 'NO.1');
+        $sheet->setCellValue('S7', 'NO.2');
+
+        $sheet->mergeCells('T5:U5');
+        $sheet->setCellValue('T5', 'TEMP SLUDGE SEPARATOR');
+        $sheet->mergeCells('T6:U6');
+        $sheet->setCellValue('T6', 'TEMP ( °C )');
+        $sheet->setCellValue('T7', '-');
+        $sheet->setCellValue('U7', '-');
+
+        $sheet->mergeCells('V5:W6');
+        $sheet->setCellValue('V5', 'DECANTER IN OPERATION');
+        $sheet->setCellValue('V7', 'NO.1');
+        $sheet->setCellValue('W7', 'NO.2');
+
+        $sheet->mergeCells('X5:X6');
+        $sheet->setCellValue('X5', 'TEMP DECANTER');
+        $sheet->setCellValue('X7', '-');
+
+        $sheet->mergeCells('Y5:Y6');
+        $sheet->setCellValue('Y5', 'PROCESS HOT WATER');
+        $sheet->setCellValue('Y7', 'TEMP ( °C )');
+
+        $sheet->mergeCells('Z5:AC5');
+        $sheet->setCellValue('Z5', 'HM SEPARATOR');
+        $sheet->mergeCells('Z6:AA6');
+        $sheet->setCellValue('Z6', 'HSS NO.1');
+        $sheet->setCellValue('Z7', 'START');
+        $sheet->setCellValue('AA7', 'STOP');
+        $sheet->mergeCells('AB6:AC6');
+        $sheet->setCellValue('AB6', 'HSS NO.2');
+        $sheet->setCellValue('AB7', 'START');
+        $sheet->setCellValue('AC7', 'STOP');
+
+        $sheet->mergeCells('AD5:AG5');
+        $sheet->setCellValue('AD5', 'HM DECANTER');
+        $sheet->mergeCells('AD6:AE6');
+        $sheet->setCellValue('AD6', 'DECANTER NO 1');
+        $sheet->setCellValue('AD7', 'START');
+        $sheet->setCellValue('AE7', 'STOP');
+        $sheet->mergeCells('AF6:AG6');
+        $sheet->setCellValue('AF6', 'DECANTER NO 2');
+        $sheet->setCellValue('AF7', 'START');
+        $sheet->setCellValue('AG7', 'STOP');
+
+        $sheet->mergeCells('AH5:AH7');
+        $sheet->setCellValue('AH5', 'OUTLET SANDCYCLONE');
+        // BATAS TABLE HEADER
+
+        $rows = 8;
+
+        $numData=0;
+        foreach ($data_parameter as $val) {
+            $spreadsheet
+            ->getActiveSheet()
+            ->getStyle('A7:AH' . $rows)
+            ->getBorders()
+            ->getAllBorders()
+            ->setBorderStyle(Border::BORDER_THIN);
+
+            $numData++;
+
+            $val_DECACT1= 'X';
+            $val_DECACT2= 'X';
+
+            if($val['DECACT1'] > 0){
+                $val_DECACT1= 'V';
+            } else{
+                $spreadsheet->getActiveSheet()->getStyle('V'. $rows.':'.'V'. $rows)->getFont()->getColor()->setARGB('FFFF0000');
+            }
+
+            if($val['DECACT2'] > 0){
+                $val_DECACT2= 'V';
+            } else{
+                $spreadsheet->getActiveSheet()->getStyle('W'. $rows.':'.'W'. $rows)->getFont()->getColor()->setARGB('FFFF0000');
+            }
+
+            $sheet->setCellValue('A' . $rows, $numData);
+            $sheet->setCellValue('B' . $rows, $val['TIME_DISP']);
+            $sheet->setCellValue('C' . $rows, $val['DOC']);
+            $sheet->setCellValue('D' . $rows, $val['COTTMP1']);
+            $sheet->setCellValue('E' . $rows, $val['OITTMP1']);
+            $sheet->setCellValue('F' . $rows, $val['OITTMP2']);
+            $sheet->setCellValue('G' . $rows, $val['VCMCH1']);
+            $sheet->setCellValue('H' . $rows, $val['VCMCH2']);
+            $sheet->setCellValue('I' . $rows, $val['ROTTMP1']);
+            $sheet->setCellValue('J' . $rows, $val['CSTTMP1']);
+            $sheet->setCellValue('K' . $rows, $val['CSTTMP2']);
+            $sheet->setCellValue('L' . $rows, $val['CSTTMP3']);
+            $sheet->setCellValue('M' . $rows, $val['CSTOLY1']);
+            $sheet->setCellValue('N' . $rows, $val['CSTOLY2']);
+            $sheet->setCellValue('O' . $rows, $val['CSTOLY3']);
+            $sheet->setCellValue('P' . $rows, $val['SDTTMP1']);
+            $sheet->setCellValue('Q' . $rows, $val['SDTTMP2']);
+            $sheet->setCellValue('R' . $rows, $val['SGTTMP1']);
+            $sheet->setCellValue('S' . $rows, $val['SGTTMP2']);
+            $sheet->setCellValue('T' . $rows, $val['SSPTMP1']);
+            $sheet->setCellValue('U' . $rows, $val['SSPTMP2']);
+            $sheet->setCellValue('V' . $rows, $val_DECACT1);
+            $sheet->setCellValue('W' . $rows, $val_DECACT2);
+            $sheet->setCellValue('X' . $rows, $val['DECTMP1']);
+            $sheet->setCellValue('Y' . $rows, $val['HWTTMP1']);
+            $sheet->setCellValue('Z' . $rows, $this->hmFormat($val['SPHMS1']));
+            $sheet->setCellValue('AA' . $rows, $this->hmFormat($val['SPHME1']));
+            $sheet->setCellValue('AB' . $rows, $this->hmFormat($val['SPHMS2']));
+            $sheet->setCellValue('AC' . $rows, $this->hmFormat($val['SPHME2']));
+            $sheet->setCellValue('AD' . $rows, $this->hmFormat($val['DCHMS1']));
+            $sheet->setCellValue('AE' . $rows, $this->hmFormat($val['DCHME1']));
+            $sheet->setCellValue('AF' . $rows, $this->hmFormat($val['DCHMS2']));
+            $sheet->setCellValue('AG' . $rows, $this->hmFormat($val['DCHME2']));
+            $sheet->setCellValue('AH' . $rows, $val['OSS1']);
+            
+
+            $spreadsheet->getActiveSheet()->getStyle('A'. $rows.':AH'.$rows)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $rows++;
+        }
+
+        
+
+        $spreadsheet->getActiveSheet()->getStyle('V8:W'. $rows)->getFont()->setBold(true);
+        $spreadsheet->getActiveSheet()->getStyle('C8:L' . $rows)->getNumberFormat()->setFormatCode('#,##0.00');
+        $spreadsheet->getActiveSheet()->getStyle('M8:O' . $rows)->getNumberFormat()->setFormatCode('#,##0.00');
+        $spreadsheet->getActiveSheet()->getStyle('P8:U' . $rows)->getNumberFormat()->setFormatCode('#,##0.00');
+        $spreadsheet->getActiveSheet()->getStyle('X8:Y' . $rows)->getNumberFormat()->setFormatCode('#,##0.00');
+        $spreadsheet->getActiveSheet()->getStyle('A1:A1')->getNumberFormat()->setFormatCode('@');
+
+        $writer = new Xlsx($spreadsheet);
+
+        $writer->save($fileName);
+
+        header("Content-Type: application/vnd.ms-excel");
+
+        header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
+
+        header('Expires: 0');
+
+        header('Cache-Control: must-revalidate');
+
+        header('Pragma: public');
+
+        header('Content-Length:' . filesize($fileName));
+
+        flush();
+
+        readfile($fileName);
+
+        echo "<script>window.close();</script>";
+
+        exit;
+    }
+
+    public function hmFormat($value=''){
+        
+        $returnVal= '';
+
+        $lengthVal = strlen($value);
+
+        if($value != null){
+
+            $Jam = substr($value,0,$lengthVal-4);
+            $Menit = substr($value,$lengthVal-4,2);
+            $Detik = substr($value,$lengthVal-2,2);
+
+
+            $returnVal = $Jam.'.'.$Menit.'.'.$Detik;
+        } 
+        return  $returnVal;
+    }
 	// batas pakai
 	
 	
