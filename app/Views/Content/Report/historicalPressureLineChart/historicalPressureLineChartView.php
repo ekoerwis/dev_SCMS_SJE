@@ -246,7 +246,7 @@
                     borderColor: "#2873d0",
                     borderWidth: 2,
                     data: y1Values1,
-                    yAxisID: 'y1',
+                    yAxisID: 'y',
                 },
                 {
                     label : 'Dig (AMP)',
@@ -255,7 +255,7 @@
                     borderColor: "rgb(75, 192, 192)",
                     borderWidth: 2,
                     data: y2Values1,
-                    yAxisID: 'y1',
+                    yAxisID: 'y',
                 }
             ]
             },
@@ -288,7 +288,7 @@
                         position: 'left',
                         title: {
                             display: true,
-                            text: 'Temp ( \u00B0C )',
+                            text: 'Value',
                             color: 'rgb(255, 99, 132)',
                             font: {
                                 // family: 'Comic Sans MS',
@@ -302,25 +302,25 @@
                             display: true,
                         },
                     },
-                    y1: {
-                        display: true,
-                        position: 'right',
-                        title: {
-                            display: true,
-                            text: 'Tekanan & Arus',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        },
-                        grid: {
-                            display: false,
-                        },
-                    },
+                    // y1: {
+                    //     display: true,
+                    //     position: 'right',
+                    //     title: {
+                    //         display: true,
+                    //         text: 'Tekanan & Arus',
+                    //         color: '#2873d0',
+                    //         font: {
+                    //             // family: 'Comic Sans MS',
+                    //             // size: 20,
+                    //             // weight: 'bold',
+                    //             // lineHeight: 1.2,
+                    //         },
+                    //         // padding: {top: 20, left: 0, right: 0, bottom: 0}
+                    //     },
+                    //     grid: {
+                    //         display: false,
+                    //     },
+                    // },
                 },
                 plugins :{
                     title: {
