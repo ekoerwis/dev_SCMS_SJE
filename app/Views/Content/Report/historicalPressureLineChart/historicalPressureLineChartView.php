@@ -307,7 +307,7 @@
                         position: 'right',
                         title: {
                             display: true,
-                            text: 'AMP & BAR',
+                            text: 'Tekanan & Arus',
                             color: '#2873d0',
                             font: {
                                 // family: 'Comic Sans MS',
@@ -325,7 +325,7 @@
                 plugins :{
                     title: {
                         display: true,
-                        text: 'Historical Pressure '+iNumbers+' Station Graphic : '+tdate,
+                        text: 'Press - '+iNumbers,
                         fontSize : 14,
                     },
                     legend: {
