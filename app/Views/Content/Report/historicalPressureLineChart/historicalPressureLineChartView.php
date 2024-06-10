@@ -8,13 +8,21 @@
 </style>
 
 
-<div id="tb-pv" class="pb-1 pt-1">        
+<div id="tb-pv" class="pb-1 pt-1" style="background-color: white;">        
     <div class='col-xl-12 col-lg-12 col-md-12 row'>
         
         <div class="col row">
             <input id="dt-tdate" name="TDATE" class="easyui-datebox" style="width: 150px;"  data-options="required:true">
             &nbsp;
             <input id="sb-modeView" style="width:100px;">
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <div style="width: 80px; height: 25px; background-color: rgb(255, 99, 132); align-content: center; align-self: center; text-align: center; color: #fff;">Temp (<span>&#176;</span>C)</div> 
+            &nbsp;
+            <div style="width: 80px; height: 25px; background-color: #2873d0; align-content: center; align-self: center; text-align: center; color: #fff;">Press (BAR)</div> 
+            &nbsp;
+            <div style="width: 80px; height: 25px; background-color: rgb(75, 192, 192); align-content: center; align-self: center; text-align: center;color: #fff;">Dig (AMP)</div> 
         </div>
         
         <div class=" col-md-auto  text-right">
@@ -26,18 +34,18 @@
 
 </div>
 
-<div class="report-content">
+<div class="report-content" style="background-color: white;">
     <div class="col-xl-12 col-lg-12 col-md-12 border-right-blue-grey border-right-lighten-5">
         <div class="my-1 text-center">
           <div class="card-content">
             
             <div class="col-xl-12 col-lg-12 col-md-12 row">
-                <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart7 d-flex justify-content-center" style="height: 250px" >
+                <!-- <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart7 d-flex justify-content-center" style="height: 250px" >
                     <canvas id="myChart7" style="width:100%;"></canvas>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart6 d-flex justify-content-center" style="height: 250px" >
                     <canvas id="myChart6" style="width:100%;"></canvas>
-                </div>
+                </div> -->
                 <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart1 d-flex justify-content-center" style="height: 250px" >
                     <canvas id="myChart1" style="width:100%;"></canvas>
                 </div>
@@ -53,6 +61,9 @@
                 <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart5 d-flex justify-content-center" style="height: 250px" >
                     <canvas id="myChart5" style="width:100%;"></canvas>
                 </div>
+                <!-- <div class="col-xl-6 col-lg-6 col-md-6 myChartDiv myChart6 d-flex justify-content-center" style="height: 250px" >
+                    <canvas id="myChart6" style="width:100%;"></canvas>
+                </div> -->
             </div>
 
             <div class="col-xl-12 col-lg-12 col-md-12 row">
@@ -141,15 +152,15 @@
             exit;   
         } 
         
-        for(i=1;i<8;i++){
-            if(i==6){
-                fetchData(dateParam,i,'bpv');
-            } else if (i==7){
-                fetchData(dateParam,i,'turbin');
-            } else {
-                fetchData(dateParam,i,'pressure');
-            }
-            
+        for(i=1;i<7;i++){
+            fetchData(dateParam,i,'pressure');
+            // if(i==6){
+            //     fetchData(dateParam,i,'bpv');
+            // } else if (i==7){
+            //     fetchData(dateParam,i,'turbin');
+            // } else {
+            //     fetchData(dateParam,i,'pressure');
+            // }
             // console.log('chart:'+i);
         }
         
@@ -167,10 +178,11 @@
             functionData ='';
         }
 
-        DIVID_New = iNumbers;
+        DIVID = 151;
 
-        if(iNumbers >=1 & iNumbers <=5){
-            DIVID_New = iNumbers +130;
+        if(iNumbers >=1 & iNumbers <=6){
+            // DIVID_New = iNumbers +130;
+            DIVID_New = 151;
         }
 
         $.ajax({
@@ -179,6 +191,7 @@
         data : {
             TDATE : tdate,
             DIVID : DIVID_New,
+            NUMBERS : iNumbers,
         },
         beforeSend: function (){
             $(".myChart"+iNumbers).append('<i class="fa fa-spin fa-spinner myChartSpinner'+iNumbers+'" style="font-size:30px; position:absolute; top:100px;z-index: 2;"></i>');
@@ -188,81 +201,27 @@
                 alert("Data Kosong Hubungi Administrator");
             } else {
                 objHistory = JSON.parse(response);
-                if(iNumbers==1){
+                // if(iNumbers==1){
+                if(iNumbers>=1 & iNumbers <=5){
                     var xValues1 = [];
                     var yValues1 = [];
+                    var y1Values1 = [];
+                    var y2Values1 = [];
                     for (var i = 0; i < objHistory.length; i++) {
                         xValues1.push(objHistory[i].TM);
-                        yValues1.push(objHistory[i].MBARG);
+                        yValues1.push(objHistory[i].TEMP);
+                        y1Values1.push(objHistory[i].BAR);
+                        y2Values1.push(objHistory[i].AMP);
                     }
-                    generateChart1(xValues1, yValues1, tdate,iNumbers);
+                    generateChart1(xValues1, yValues1, y1Values1, y2Values1, tdate,iNumbers);
                 }
 
-                if(iNumbers==2){
-                    var xValues2 = [];
-                    var yValues2 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues2.push(objHistory[i].TM);
-                        yValues2.push(objHistory[i].MBARG);
-                    }
-                    generateChart2(xValues2, yValues2, tdate,iNumbers);
-                }
-
-                if(iNumbers==3){
-                    var xValues3 = [];
-                    var yValues3 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues3.push(objHistory[i].TM);
-                        yValues3.push(objHistory[i].MBARG);
-                    }
-                    generateChart3(xValues3, yValues3, tdate,iNumbers);
-                }
-
-                if(iNumbers==4){
-                    var xValues4 = [];
-                    var yValues4 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues4.push(objHistory[i].TM);
-                        yValues4.push(objHistory[i].MBARG);
-                    }
-                    generateChart4(xValues4, yValues4, tdate,iNumbers);
-                }
-
-                if(iNumbers==5){
-                    var xValues5 = [];
-                    var yValues5 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues5.push(objHistory[i].TM);
-                        yValues5.push(objHistory[i].MBARG);
-                    }
-                    generateChart5(xValues5, yValues5, tdate,iNumbers);
-                }
-
-                if(iNumbers==6){
-                    var xValues6 = [];
-                    var yValues6 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues6.push(objHistory[i].TM);
-                        yValues6.push(objHistory[i].MBARG);
-                    }
-                    generateChart6(xValues6, yValues6, tdate,iNumbers);
-                }
-
-                if(iNumbers==7){
-                    var xValues7 = [];
-                    var yValues7 = [];
-                    for (var i = 0; i < objHistory.length; i++) {
-                        xValues7.push(objHistory[i].TM);
-                        yValues7.push(objHistory[i].MBARG);
-                    }
-                    generateChart7(xValues7, yValues7, tdate,iNumbers);
-                }
             }
         }
         });
     }
     
-    function generateChart1(xValues1, yValues1, tdate,iNumbers) {
+    function generateChart1(xValues1, yValues1, y1Values1,y2Values1, tdate,iNumbers) {
 
         // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
         $(".myChartSpinner"+iNumbers).remove();
@@ -272,13 +231,33 @@
             data: {
                 labels: xValues1,
                 datasets: [{
-                    label : '',
+                    label : 'Temp ( \u00B0C )',
+                    fill: false,
+                    backgroundColor: "rgb(255, 99, 132)",
+                    borderColor: "rgb(255, 99, 132)",
+                    borderWidth: 2,
+                    data: yValues1,
+                    yAxisID: 'y',
+                },
+                {
+                    label : 'Press (BAR) ',
                     fill: false,
                     backgroundColor: "#2873d0",
                     borderColor: "#2873d0",
                     borderWidth: 2,
-                    data: yValues1
-                }]
+                    data: y1Values1,
+                    yAxisID: 'y1',
+                },
+                {
+                    label : 'Dig (AMP)',
+                    fill: false,
+                    backgroundColor: "rgb(75, 192, 192)",
+                    borderColor: "rgb(75, 192, 192)",
+                    borderWidth: 2,
+                    data: y2Values1,
+                    yAxisID: 'y1',
+                }
+            ]
             },
             options: {
                 responsive: true,
@@ -298,13 +277,37 @@
                                 // lineHeight: 1.2,
                             },
                             // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
+                        },
+                        grid: {
+                            display: true,
+                        },
+                        
                     },
                     y: {
                         display: true,
+                        position: 'left',
                         title: {
                             display: true,
-                            text: 'Pressure(mBarg)',
+                            text: 'Temp ( \u00B0C )',
+                            color: 'rgb(255, 99, 132)',
+                            font: {
+                                // family: 'Comic Sans MS',
+                                // size: 20,
+                                // weight: 'bold',
+                                // lineHeight: 1.2,
+                            },
+                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
+                        },
+                        grid: {
+                            display: true,
+                        },
+                    },
+                    y1: {
+                        display: true,
+                        position: 'right',
+                        title: {
+                            display: true,
+                            text: 'AMP & BAR',
                             color: '#2873d0',
                             font: {
                                 // family: 'Comic Sans MS',
@@ -313,13 +316,16 @@
                                 // lineHeight: 1.2,
                             },
                             // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
+                        },
+                        grid: {
+                            display: false,
+                        },
                     },
                 },
                 plugins :{
                     title: {
                         display: true,
-                        text: 'Historical Pressure Sterilizer '+iNumbers+' Graphic : '+tdate,
+                        text: 'Historical Pressure '+iNumbers+' Station Graphic : '+tdate,
                         fontSize : 14,
                     },
                     legend: {
@@ -328,444 +334,58 @@
                 }
             }
         };
-        if(myLineChart1){
-            myLineChart1.destroy();
-        }
-        var ctx1 = document.getElementById("myChart1").getContext("2d");
-        myLineChart1 = new Chart(ctx1, config1);
-    }
 
-    function generateChart2(xValues2, yValues2, tdate,iNumbers) {
-        // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-        $(".myChartSpinner"+iNumbers).remove();
-
-        config2 = 
-        {
-            type: "line",
-            data: {
-                labels: xValues2,
-                datasets: [{
-                fill: false,
-                backgroundColor: "#2873d0",
-                borderColor: "#2873d0",
-                borderWidth: 2,
-                data: yValues2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(mBarg)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-                plugins :{
-                    title: {
-                        display: true,
-                        text: 'Historical Pressure Sterilizer '+iNumbers+' Graphic : '+tdate,
-                        fontSize : 14,
-                    },
-                    legend: {
-                        display: false
-                    },
-                }
+        if(iNumbers == 1){
+            if(myLineChart1){
+                myLineChart1.destroy();
             }
-        };
-        if(myLineChart2){
-            myLineChart2.destroy();
+            var ctx1 = document.getElementById("myChart1").getContext("2d");
+            myLineChart1 = new Chart(ctx1, config1);
         }
-        var ctx2 = document.getElementById("myChart2").getContext("2d");
-        myLineChart2 = new Chart(ctx2, config2);
-    }
 
-    function generateChart3(xValues3, yValues3, tdate,iNumbers) {
-        // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-        $(".myChartSpinner"+iNumbers).remove();
-
-        config3 = 
-        {
-            type: "line",
-            data: {
-                labels: xValues3,
-                datasets: [{
-                fill: false,
-                backgroundColor: "#2873d0",
-                borderColor: "#2873d0",
-                borderWidth: 2,
-                data: yValues3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(mBarg)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-                plugins :{
-                    title: {
-                        display: true,
-                        text: 'Historical Pressure Sterilizer '+iNumbers+' Graphic : '+tdate,
-                        fontSize : 14,
-                    },
-                    legend: {
-                        display: false
-                    },
-                }
+        if(iNumbers == 2){
+            if(myLineChart2){
+                myLineChart2.destroy();
             }
-        };
-        if(myLineChart3){
-            myLineChart3.destroy();
+            var ctx2 = document.getElementById("myChart"+iNumbers).getContext("2d");
+            myLineChart2 = new Chart(ctx2, config1);
         }
-        var ctx3 = document.getElementById("myChart3").getContext("2d");
-        myLineChart3 = new Chart(ctx3, config3);
-    }
 
-    function generateChart4(xValues4, yValues4, tdate,iNumbers) {
-        // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-        $(".myChartSpinner"+iNumbers).remove();
-
-        config4 = 
-        {
-            type: "line",
-            data: {
-                labels: xValues4,
-                datasets: [{
-                fill: false,
-                backgroundColor: "#2873d0",
-                borderColor: "#2873d0",
-                borderWidth: 2,
-                data: yValues4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(mBarg)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-                plugins :{
-                    title: {
-                        display: true,
-                        text: 'Historical Pressure Sterilizer '+iNumbers+' Graphic : '+tdate,
-                        fontSize : 14,
-                    },
-                    legend: {
-                        display: false
-                    },
-                }
+        if(iNumbers == 3){
+            if(myLineChart3){
+                myLineChart3.destroy();
             }
-        };
-        if(myLineChart4){
-            myLineChart4.destroy();
+            var ctx3 = document.getElementById("myChart"+iNumbers).getContext("2d");
+            myLineChart3 = new Chart(ctx3, config1);
         }
-        var ctx4 = document.getElementById("myChart4").getContext("2d");
-        myLineChart4 = new Chart(ctx4, config4);
-    }
 
-    function generateChart5(xValues5, yValues5, tdate,iNumbers) {
-        // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-        $(".myChartSpinner"+iNumbers).remove();
-
-        config5 = 
-        {
-            type: "line",
-            data: {
-                labels: xValues5,
-                datasets: [{
-                fill: false,
-                backgroundColor: "#2873d0",
-                borderColor: "#2873d0",
-                borderWidth: 2,
-                data: yValues5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(mBarg)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-                plugins :{
-                    title: {
-                        display: true,
-                        text: 'Historical Pressure Sterilizer '+iNumbers+' Graphic : '+tdate,
-                        fontSize : 14,
-                    },
-                    legend: {
-                        display: false
-                    },
-                }
+        if(iNumbers == 4){
+            if(myLineChart4){
+                myLineChart4.destroy();
             }
-        };
-        if(myLineChart5){
-            myLineChart5.destroy();
+            var ctx4 = document.getElementById("myChart"+iNumbers).getContext("2d");
+            myLineChart4 = new Chart(ctx4, config1);
         }
-        var ctx5 = document.getElementById("myChart5").getContext("2d");
-        myLineChart5 = new Chart(ctx5, config5);
-    }
 
-    function generateChart6(xValues6, yValues6, tdate,iNumbers) {
-        // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-        $(".myChartSpinner"+iNumbers).remove();
-
-        config6 = 
-        {
-            type: "line",
-            data: {
-                labels: xValues6,
-                datasets: [{
-                fill: false,
-                backgroundColor: "#2873d0",
-                borderColor: "#2873d0",
-                borderWidth: 2,
-                data: yValues6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(Bar)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-                plugins :{
-                    title: {
-                        display: true,
-                        text: 'Historical BPV Graphic : '+tdate,
-                        fontSize : 14,
-                    },
-                    legend: {
-                        display: false
-                    },
-                }
+        if(iNumbers == 5){
+            if(myLineChart5){
+                myLineChart5.destroy();
             }
-        };
-        if(myLineChart6){
-            myLineChart6.destroy();
+            var ctx5 = document.getElementById("myChart"+iNumbers).getContext("2d");
+            myLineChart5 = new Chart(ctx5, config1);
         }
-        var ctx6 = document.getElementById("myChart6").getContext("2d");
-        myLineChart6 = new Chart(ctx6, config6);
-    }
 
-function generateChart7(xValues7, yValues7, tdate,iNumbers) {
-    // $(".myChart"+iNumbers).html('<canvas id="myChart'+iNumbers+'" style="width:100%;"></canvas>'); 
-    $(".myChartSpinner"+iNumbers).remove();
-
-    config7 = 
-    {
-        type: "line",
-        data: {
-            labels: xValues7,
-            datasets: [{
-            fill: false,
-            backgroundColor: "#2873d0",
-            borderColor: "#2873d0",
-            borderWidth: 2,
-            data: yValues7
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            pointStyle :false,
-                scales: {
-                    x: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Time',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                    y: {
-                        display: true,
-                        title: {
-                            display: true,
-                            text: 'Pressure(Bar)',
-                            color: '#2873d0',
-                            font: {
-                                // family: 'Comic Sans MS',
-                                // size: 20,
-                                // weight: 'bold',
-                                // lineHeight: 1.2,
-                            },
-                            // padding: {top: 20, left: 0, right: 0, bottom: 0}
-                        }
-                    },
-                },
-            plugins :{
-                title: {
-                    display: true,
-                    text: 'Historical Turbin Graphic : '+tdate,
-                    fontSize : 14,
-                },
-                legend: {
-                    display: false
-                },
+        if(iNumbers == 6){
+            if(myLineChart6){
+                myLineChart6.destroy();
             }
+            var ctx6 = document.getElementById("myChart"+iNumbers).getContext("2d");
+            myLineChart6 = new Chart(ctx6, config1);
         }
-    };
-    if(myLineChart7){
-        myLineChart7.destroy();
+
     }
-    var ctx7 = document.getElementById("myChart7").getContext("2d");
-    myLineChart7 = new Chart(ctx7, config7);
-}
+
+   
 
 
 
