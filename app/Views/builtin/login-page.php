@@ -31,9 +31,12 @@ if (!empty($js)) {
 				<img src="<?php echo $config->baseURL . '/public/images/' . $settingWeb->logo_login ?>">
 			</div>
 
-			<?php if (!empty($desc)) {
-				echo '<p>' . $desc . '</p>';
-			} ?>
+			<?php 
+			// $desc = $config->fullCompany;
+			// if (!empty($desc)) {
+			// 	echo '<br><p style="color:#FFFF00;">' . $desc . '</p>';
+			// } 
+			?>
 		</div>
 		<div class="login-body">
 			<?php
@@ -106,7 +109,21 @@ if (!empty($js)) {
 					?>
 					<input type="hidden" name="form_token" value="<?= $form_token ?>" />
 				</div>
+				
 		</div>
+		
+				
+
+		<div class="login-header">
+			<div class="logo">
+				<?php 
+				$desc = $config->fullCompany;
+				if (!empty($desc)) {
+					echo '<a style="color:#FFD700;font-size: 20px;">' . $desc . '</a>';
+				} ?>
+			</div>			
+		</div>
+
 		<div class="copyright">
 			<?php
 			$footer_login = $settingWeb->footer_login ? str_replace('{{YEAR}}', date('Y'), $settingWeb->footer_login) : '';

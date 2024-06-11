@@ -301,4 +301,13 @@ class App extends BaseConfig
 	| public $roleNoCompSite = [1];
 	*/
 	public $roleNoCompSite = [1];	
+
+	/*
+	|--------------------------------------------------------------------------
+	| Company
+	|--------------------------------------------------------------------------
+	| Berisi Identitas Aplikasi dipasang
+	*/
+	public $fullCompany = 'PT. SUNGAI JELAI ESTATE';	
+	public $initialCompany = 'PT. SJE';	
 }

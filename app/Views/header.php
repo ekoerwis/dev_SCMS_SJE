@@ -73,7 +73,7 @@ $user = $_SESSION['user'];
 <body>
 	<header class="nav-header">
 		<div class="nav-header-logo pull-left">
-			<a class="header-logo" href="<?=$config->baseURL?>" title="Jagowebdev">
+			<a class="header-logo" href="<?=$config->baseURL?>" title="<?=$config->fullCompany?>">
 				<img src="<?=$config->baseURL . '/public/images/' . $settingWeb->logo_app?>"/>
 			</a>
 		</div>
