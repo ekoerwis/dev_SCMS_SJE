@@ -421,7 +421,7 @@
                     },
                     y1: {
                         suggestedMin:40,
-                        suggestedMax:40,
+                        max:150,
                         display: true,
                         position: 'left',
                         title: {
