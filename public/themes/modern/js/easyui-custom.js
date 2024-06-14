@@ -7,6 +7,7 @@ $.extend($.fn.datebox.defaults,{
     var m = date.getMonth();
     var y = date.getFullYear();
     return d+'-'+opts.monthNames[m]+'-'+y;
+	//return (d<10?('0'+d):d)+'-'+opts.monthNames[m]+'-'+y;
   },
   parser:function(s){
     if (!s){return new Date();}
@@ -20,30 +21,9 @@ $.extend($.fn.datebox.defaults,{
       return new Date(y,m,d);
     } else {
       return new Date();
-    }    
+    }
   }
 })
-
-// $.extend($.fn.datebox.defaults,{
-//   formatter:function(date){
-//     var y = date.getFullYear();
-//     var m = date.getMonth()+1;
-//     var d = date.getDate();
-//     return (d<10?('0'+d):d)+'-'+(m<10?('0'+m):m)+'-'+y;
-//   },
-//   parser:function(s){
-//     if (!s) return new Date();
-//     var ss = s.split('-');
-//     var d = parseInt(ss[0],10);
-//     var m = parseInt(ss[1],10);
-//     var y = parseInt(ss[2],10);
-//     if (!isNaN(y) && !isNaN(m) && !isNaN(d)){
-//       return new Date(y,m-1,d);
-//     } else {
-//       return new Date();
-//     }
-//   }
-// });
 
 $.extend($.fn.datetimebox.defaults, {
   monthNames: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
@@ -53,9 +33,13 @@ $.extend($.fn.datetimebox.defaults, {
     var m = date.getMonth();
     var y = date.getFullYear();
 
-    var hh = date.getHours();
-    var mi = date.getMinutes();
-    var sec = date.getSeconds();
+    var hh = ('0' + date.getHours()).slice(-2); // Ensure two digits
+    var mi = ('0' + date.getMinutes()).slice(-2); // Ensure two digits
+    var sec = ('0' + date.getSeconds()).slice(-2); // Ensure two digits
+
+    // var hh = date.getHours();
+    // var mi = date.getMinutes();
+    // var sec = date.getSeconds();
     return d+'-'+opts.monthNames[m]+'-'+y+' '+hh+':'+mi+':'+sec;
   },
   parser:function(s){
@@ -77,11 +61,11 @@ $.extend($.fn.datetimebox.defaults, {
 // batas format kalender
 
 // loading bar easyui
- function loadingBar(status=''){
+ function loadingBar(status='', p_title = 'Please waiting', p_msg='Loading data...'){
       if(status == "on"){
         $.messager.progress({
-         title:'Please waiting',
-          msg:'Loading data...'
+         title: p_title,
+          msg: p_msg
           });
         var bar = $.messager.progress('bar');
         bar.progressbar({
@@ -90,7 +74,7 @@ $.extend($.fn.datetimebox.defaults, {
       } else {
         $.messager.progress('close');
       }
-    
+
   }
 
 //batas  loading bar easyui
@@ -105,6 +89,36 @@ function formatdecimal(num){
   return parseInt(num).format(2, 3, ',', '.');
 }
 
+// Format Number Custom Easyui
+function formatNumberNoComma(val,row){
+
+  if(val){
+    var v = parseFloat(val);
+    return isNaN(v) ? '' : parseFloat(val).format(0, 3, ',', '.');
+  }else{
+    return '';
+  }
+}
+
+function formatNumberOneComma(val,row){
+
+  if(val){
+    var v = parseFloat(val);
+    return isNaN(v) ? '' : parseFloat(val).format(1, 3, ',', '.');
+  }else{
+    return '';
+  }
+}
+
+function formatNumberTwoComma(val,row){
+  if(val){
+    var v = parseFloat(val);
+    return isNaN(v) ? '' : parseFloat(val).format(2, 3, ',', '.');
+  }else{
+    return '';
+  }
+}
+// End Format Number Custom Easyui
 
 // message easyui
 $.map(['validatebox','textbox','passwordbox','filebox','searchbox',
@@ -124,7 +138,45 @@ if ($.fn.validatebox){
 
 // batas message easyui
 
+// DISABLE ALL FORM -- CARA PAKAI -> $('#fm').form('disable');
+$.extend($.fn.form.methods, {
+  enable: function(jq){
+    jq.form('disable','_enable_')
+  },
 
+  disable: function(jq,omit){
+    var omit = '' || omit, mode = 'disable';
+    if(omit == '_enable_') mode = 'enable';
+    return jq.each(function(){
+      var t = $(this);
+      var plugins = ['textbox','combo','combobox','combotree','combogrid','datebox','datetimebox','spinner','timespinner','numberbox','numberspinner','slider','validatebox'];
+      for(var i=0; i<plugins.length; i++){
+        var plugin = plugins[i];
+        if(plugin=='validatebox') {
+          var r = t.children().find('.easyui-validatebox').not(omit);
+          if (r.length) {
+            if(mode=='enable') r.removeAttr('disabled');
+            else r.attr('disabled','disabled');
+          }
+        }
+        else {
+          var r = t.children().find('.'+plugin+'-f').not(omit);
+          if(r.length && r[plugin]) r[plugin](mode);
+        }
+      }
+      t.form('validate');
+    })
+  }
+})
+      // TAMBAH KAN CODE DIBAWAH UNTUK DISABLED FORM
+      //$('#fm').form('disable');
+      // END ALL FORM DISABLED
+      //var cc = $('#lov-status');
+      //var data = cc.combobox('getData');
+      // DISABLED ISI SELECT ROW KE 3 -> data[2]
+      //data[2].disabled = true;
+      //cc.combobox('loadData', data);
+// BATAS DISABLE ALL FORM
 
 // cara penggunaan di id="dg" table -> data-options : onResize:onResize
 $.extend($.fn.datagrid.methods,{
