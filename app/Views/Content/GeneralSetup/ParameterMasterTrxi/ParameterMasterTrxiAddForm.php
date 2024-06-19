@@ -59,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="row col-sm-12 divbottom">
+                    <div class="row col-sm-12 divbottom" hidden>
                         <label class="col-sm-3 col-form-label"> UOM </label>
                         <div class="col-sm-9">
                             <input id="cg-uom" name="UOM" class="easyui-combogrid col-sm-4"
@@ -201,30 +201,30 @@ $(function() {
         { field: 'PARAMETERVALUE', halign: 'center', align: 'left', title: 'Value', width: 200, editor: { type: 'textbox', options: { required: true } } },
     ]],
     columns:[[
-        {
-            field: 'UOM_D', halign: 'center', title: 'UOM', width: 100, editor: {
-                type: 'combogrid',
-                options: {
-                    panelWidth: 400,
-                    pageSize: 50,
-                    url: "<?php echo site_url() . '/../content/GeneralSetup/ParameterMasterTrxi/getUOM'; ?>",
-                    idField: 'UNITOFMEASURECODE',
-                    textField: 'UNITOFMEASURECODE',
-                    required: false,
-                    editable: true,
-                    pagination: true,
-                    rownumbers: true,
-                    fitColumns: true,
-                    loadMsg: 'Loading',
-                    mode: 'remote',
-                    columns: [[
-                        { field: 'UNITOFMEASURECODE', title: 'UOM', width: 50 },
-                        { field: 'UNITOFMEASUREDESC', title: 'DESC', width: 100 }
-                    ]],
-                    // toolbar: '#tb-uom',
-                }
-            }
-        },
+        // {
+            // field: 'UOM_D', halign: 'center', title: 'UOM', width: 100, editor: {
+            //     type: 'combogrid',
+            //     options: {
+            //         panelWidth: 400,
+            //         pageSize: 50,
+            //         url: "<?php //echo site_url() . '/../content/GeneralSetup/ParameterMasterTrxi/getUOM'; ?>",
+            //         idField: 'UNITOFMEASURECODE',
+            //         textField: 'UNITOFMEASURECODE',
+            //         required: false,
+            //         editable: true,
+            //         pagination: true,
+            //         rownumbers: true,
+            //         fitColumns: true,
+            //         loadMsg: 'Loading',
+            //         mode: 'remote',
+            //         columns: [[
+            //             { field: 'UNITOFMEASURECODE', title: 'UOM', width: 50 },
+            //             { field: 'UNITOFMEASUREDESC', title: 'DESC', width: 100 }
+            //         ]],
+            //     }
+            // }
+        // },
+        { field: 'UOM_D', halign: 'center', title: 'UOM', width: 75, editor: { type: 'textbox', options: {} } },
         { field: 'MIN_D',  halign: 'center', align: 'right', title: 'Min', width: 75, editor: { type: 'numberbox', options: { required: false, precision: 2, groupSeparator: ',', decimalSeparator: '.' } } },
         { field: 'MAX_D',  halign: 'center', align: 'right', title: 'Max', width: 75, editor: { type: 'numberbox', options: { required: false, precision: 2, groupSeparator: ',', decimalSeparator: '.' } } },
         { field: 'SEQ_NO_D',  halign: 'center', align: 'right', title: 'Seq', width: 75, editor: { type: 'numberbox', options: { required: false, precision: 0, groupSeparator: ',', decimalSeparator: '.' } } },
