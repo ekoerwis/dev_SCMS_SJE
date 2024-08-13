@@ -27,43 +27,30 @@
                     ">
         <thead>
             <tr>
-                <th colspan="3"><b>THRESHER</b></th>
-                <th colspan="19"><b>EMPTY BUNCH PRESS</b></th>
-                <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
-                <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
-            </tr>
-            <tr>
-                <th rowspan="3" field="THRSMP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>SAMPLE</b></th>
-                <th rowspan="3" field="THRUSB" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>USB</b></th>
-                <th rowspan="3" field="THRPER" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>%</b></th>
-                <th colspan="2" ><b>EBP I</b></th>
-                <th colspan="2" ><b>EBP II</b></th>
+                <th colspan="3" rowspan="2"><b>THRESHER</b></th>
+                <th colspan="2" rowspan="2"><b>AMPERE</b></th>
                 <th rowspan="2" ><b>BAK LIQOUR</b></th>
-                <th colspan="6" ><b>KONDISI GEAR BOX</b></th>
-                <th colspan="2" ><b>POMPA</b></th>
-                <th colspan="6" ><b>HM</b></th>
+                <th colspan="4" ><b>POMPA</b></th>
+                <th colspan="6" ><b>HOUR METER (HM)</b></th>
             </tr>
             <tr>
-                <th rowspan="2" field="THREBP_V1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>VOLT</b></th>
-                <th rowspan="2" field="THREBP_A1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMPERE</b></th>
-                <th rowspan="2" field="THREBP_V2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>VOLT</b></th>
-                <th rowspan="2" field="THREBP_A2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMPERE</b></th>
-                <th colspan="3" ><b>EBP I</b></th>
-                <th colspan="3" ><b>EBP II</b></th>
-                <th rowspan="2" field="THRPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO. 1</b></th>
-                <th rowspan="2" field="THRPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>NO. 2</b></th>
+                <th colspan="2" ><b>NO 1</b></th>
+                <th colspan="2" ><b>NO 2</b></th>
                 <th colspan="2" ><b>EBP I</b></th>
                 <th colspan="2" ><b>EBP II</b></th>
-                <th colspan="2" ><b>BUNCH CRUISER</b></th>
+                <th colspan="2" ><b>BUNCH CRUSHER</b></th>
             </tr>
             <tr>
+                <th field="THRSMP" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>SAMPLE</b></th>
+                <th field="THRUSB" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>USB</b></th>
+                <th field="THRPER" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostumNull"><b>%</b></th>
+                <th field="THREBP_A1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP I</b></th>
+                <th field="THREBP_A2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>EBP II</b></th>
                 <th field="THRLIQ_TP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>TEMP C</b></th>
-                <th field="THREBP_GB1_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
-                <th field="THREBP_GB1_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
-                <th field="THREBP_GB1_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
-                <th field="THREBP_GB2_BAIK" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxBaik"><b>BAIK</b></th>
-                <th field="THREBP_GB2_NORMAL" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxNormal"><b>NORMAL</b></th>
-                <th field="THREBP_GB2_KURANG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="gearBoxKurang"><b>KURANG</b></th>
+                <th field="THRPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>STAT</b></th>
+                <th field="AMPPMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMP</b></th>
+                <th field="THRPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="imageTrueFalse"><b>STAT</b></th>
+                <th field="AMPPMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AMP</b></th>
                 <th field="THREBP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>
                 <th field="THREBP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>STOP</b></th>
                 <th field="THREBP_HMS2" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>

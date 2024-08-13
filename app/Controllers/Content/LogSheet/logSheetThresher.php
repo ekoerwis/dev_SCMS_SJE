@@ -171,7 +171,7 @@ class logSheetThresher extends \App\Controllers\BaseController
         // <tr><td style="text-align:left;">Jam Kerja</td><td>:</td><td>{PAGENO} of {nbpg}</td></tr>
 
         // dimatikan karena tidak tahu footernya apa
-        $mpdf->SetHTMLFooter($footerPdf);
+        // $mpdf->SetHTMLFooter($footerPdf);
 
         $mpdf->AddPage();
 
