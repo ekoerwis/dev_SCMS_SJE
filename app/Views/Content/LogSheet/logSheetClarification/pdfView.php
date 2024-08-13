@@ -14,14 +14,14 @@
 
 .reportContent {
     font-family: serif; 
-    font-size: 8pt; 
+    font-size: 10pt; 
     background-color: #FFFFFF;
 }
 
 .table1{
     border-collapse: collapse;
     border: 1px solid black;
-    font-size: 8pt; 
+    font-size: 10pt; 
 }
 
 .trHeadTable1 {
@@ -33,7 +33,7 @@
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
-    font-size: 6pt;
+    font-size: 8pt;
 }
 
 .tdTable1 {
@@ -44,7 +44,7 @@
     border-left: 1px solid black;
     /* border-bottom: 1px solid black; */
     text-align: center;
-    font-size: 7pt;
+    font-size: 9pt;
     
 }
 
@@ -91,59 +91,32 @@
                 <th colspan="6" class="thTable1"  ><b>CONTINOUS SETLING TANK</b></th>
                 <th colspan="2" class="thTable1"  ><b>SAND TRAP TANK</b></th>
                 <th colspan="2" class="thTable1"  ><b>SLUDGE TANK</b></th>
-                <th colspan="2" class="thTable1"  ><b>TEMP SLUDGE SEPARATOR</b></th>
-                <th colspan="2" rowspan="2" class="thTable1"  ><b>DECANTER IN OPERATION</b></th>
-                <th rowspan="2" class="thTable1"  ><b>TEMP DECANTER</b></th>
-                <th rowspan="2" class="thTable1"  ><b>PROCESS HOT WATER</b></th>
-                <th colspan="4" class="thTable1"  ><b>HM SEPARATOR</b></th>
-                <th colspan="4" class="thTable1"  ><b>HM DECANTER</b></th>
-                <th rowspan="3" class="thTable1"  ><b>OUTLET SANDCYCLONE</b></th>
-                <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:60,align:'center' " ><b>PARAF MANDOR</b></th> -->
-                <!-- <th rowspan="3" field="TMP1" halign="center" data-options="sortable:false,width:160,align:'center' " ><b>KETERANGAN</b></th> -->
             </tr>
             <tr class="trHeadTable1">
+                <!-- <th colspan="3" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th> -->
                 <th colspan="3" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
                 <th colspan="3" class="thTable1"  ><b>OIL LAYER (CM)</b></th>
                 <th colspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
                 <th colspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
-                <th colspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
-                <th colspan="2" class="thTable1"  ><b>HSS NO 1</b></th>
-                <th colspan="2" class="thTable1"  ><b>HSS NO 2</b></th>
-                <th colspan="2" class="thTable1"  ><b>DECANTER NO 1</b></th>
-                <th colspan="2" class="thTable1"  ><b>DECANTER NO 2</b></th>
             </tr>
             <tr class="trHeadTable1">
-                <th class="thTable1"  width="40px"><b>DCO</b></th>
-                <th class="thTable1"  width="40px"><b>COT</b></th>
-                <th class="thTable1"  width="60px" ><b>OIL TANK 1</b></th>
-                <th class="thTable1"  width="60px" ><b>OIL TANK 2</b></th>
-                <th class="thTable1"  width="35px" ><b>mmHg</b></th>
-                <th class="thTable1"  width="35px" ><b>mmHg</b></th>
-                <th class="thTable1"  width="35px" ><b><span>&#176;</span>C</b></th>
-                <th class="thTable1"  width="35px"><b>NO.1</b></th>
-                <th class="thTable1"  width="35px"><b>NO.2</b></th>
-                <th class="thTable1"  width="35px"><b>NO.3</b></th>
-                <th class="thTable1"  width="35px "><b>NO.1</b></th>
-                <th class="thTable1"  width="35px "><b>NO.2</b></th>
-                <th class="thTable1"  width="35px "><b>NO.3</b></th>
-                <th class="thTable1"  width="35px "><b>NO.1</b></th>
-                <th class="thTable1"  width="35px "><b>NO.2</b></th>
-                <th class="thTable1"  width="35px "><b>NO.1</b></th>
-                <th class="thTable1"  width="35px "><b>NO.2</b></th>
-                <th class="thTable1"  width="35px "><b>-</b></th>
-                <th class="thTable1"  width="35px "><b>-</b></th>
-                <th class="thTable1"  width="35px "><b>NO.1</b></th>
-                <th class="thTable1"  width="35px "><b>NO.2</b></th>
-                <th class="thTable1"  width="35px "><b>-</b></th>
-                <th class="thTable1"  width="35px" ><b><span>&#176;</span>C</b></th>
-                <th class="thTable1"  width="55px "><b>START</b></th>
-                <th class="thTable1"  width="55px "><b>STOP</b></th>
-                <th class="thTable1"  width="55px "><b>START</b></th>
-                <th class="thTable1"  width="55px "><b>STOP</b></th>
-                <th class="thTable1"  width="55px "><b>START</b></th>
-                <th class="thTable1"  width="55px "><b>STOP</b></th>
-                <th class="thTable1"  width="55px "><b>START</b></th>
-                <th class="thTable1"  width="55px "><b>STOP</b></th>
+                <th class="thTable1"  width="55px"><b>DCO</b></th>
+                <th class="thTable1"  width="55px"><b>COT</b></th>
+                <th class="thTable1"  width="75px" ><b>OIL TANK 1</b></th>
+                <th class="thTable1"  width="75px" ><b>OIL TANK 2</b></th>
+                <th class="thTable1"  width="50px" ><b>mmHg</b></th>
+                <th class="thTable1"  width="50px" ><b>mmHg</b></th>
+                <th class="thTable1"  width="50px" ><b><span>&#176;</span>C</b></th>
+                <th class="thTable1"  width="50px"><b>NO.1</b></th>
+                <th class="thTable1"  width="50px"><b>NO.2</b></th>
+                <th class="thTable1"  width="50px"><b>NO.3</b></th>
+                <th class="thTable1"  width="50px "><b>NO.1</b></th>
+                <th class="thTable1"  width="50px "><b>NO.2</b></th>
+                <th class="thTable1"  width="50px "><b>NO.3</b></th>
+                <th class="thTable1"  width="50px "><b>NO.1</b></th>
+                <th class="thTable1"  width="50px "><b>NO.2</b></th>
+                <th class="thTable1"  width="50px "><b>NO.1</b></th>
+                <th class="thTable1"  width="50px "><b>NO.2</b></th>
             </tr>
             </tr>
         </thead>
@@ -176,6 +149,68 @@
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['SDTTMP2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['SGTTMP1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['SGTTMP2'],2,".",",") ?></td>
+            </tr>
+<?php
+            
+        }
+?>
+        </tbody>
+    </table>
+<?php
+    }
+?>
+
+<pagebreak></pagebreak>
+
+<table id="dataTable" class="table1">
+        <thead>
+            <tr class="trHeadTable1">
+                <th rowspan="3" class="thTable1"  width="50px"><b>JAM</b></th>
+                <th colspan="2" class="thTable1"  ><b>TEMP SLUDGE SEPARATOR</b></th>
+                <th colspan="2" rowspan="2" class="thTable1"  ><b>DECANTER IN OPERATION</b></th>
+                <th rowspan="2" class="thTable1"  ><b>TEMP DECANTER</b></th>
+                <th rowspan="2" class="thTable1"  ><b>PROCESS HOT WATER</b></th>
+                <th colspan="4" class="thTable1"  ><b>HM SEPARATOR</b></th>
+                <th colspan="4" class="thTable1"  ><b>HM DECANTER</b></th>
+                <th rowspan="3" class="thTable1" width="65px" ><b>OUTLET SAND CYCLONE</b></th>
+            </tr>
+            <tr class="trHeadTable1">
+                <th colspan="2" class="thTable1"  ><b>TEMP (<span>&#176;</span>C)</b></th>
+                <th colspan="2" class="thTable1"  ><b>HSS NO 1</b></th>
+                <th colspan="2" class="thTable1"  ><b>HSS NO 2</b></th>
+                <th colspan="2" class="thTable1"  ><b>DECANTER NO 1</b></th>
+                <th colspan="2" class="thTable1"  ><b>DECANTER NO 2</b></th>
+            </tr>
+            <tr class="trHeadTable1">
+                <th class="thTable1"  width="50px "><b>-</b></th>
+                <th class="thTable1"  width="50px "><b>-</b></th>
+                <th class="thTable1"  width="50px "><b>NO.1</b></th>
+                <th class="thTable1"  width="50px "><b>NO.2</b></th>
+                <th class="thTable1"  width="50px "><b>-</b></th>
+                <th class="thTable1"  width="50px" ><b><span>&#176;</span>C</b></th>
+                <th class="thTable1"  width="70px "><b>START</b></th>
+                <th class="thTable1"  width="70px "><b>STOP</b></th>
+                <th class="thTable1"  width="70px "><b>START</b></th>
+                <th class="thTable1"  width="70px "><b>STOP</b></th>
+                <th class="thTable1"  width="70px "><b>START</b></th>
+                <th class="thTable1"  width="70px "><b>STOP</b></th>
+                <th class="thTable1"  width="70px "><b>START</b></th>
+                <th class="thTable1"  width="70px "><b>STOP</b></th>
+            </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                if(isset($data_sql)) {
+                $jmlData = count($data_sql);
+            ?>
+            <?php
+                $numData=0;
+                for($i=0;$i < $jmlData;$i++){
+                    $numData++;
+            ?>
+            <tr>
+                <td class="tdTable1" ><?= $data_sql[$i]['TIME_DISP'] ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['SSPTMP1'],2,".",",") ?></td>
                 <td class="tdTable1" ><?= number_format($data_sql[$i]['SSPTMP2'],2,".",",") ?></td>
                 <td class="tdTable1" ><?php if($data_sql[$i]['DECACT1'] > 0){echo '<img src = "'.$imagesPath.'/check.png'.'" alt="On" width="8" height="8" />';} else {echo '<img src = "'.$imagesPath.'/close.png'.'" alt="Off" width="5" height="5" />';} ?></td>
@@ -201,4 +236,6 @@
 <?php
     }
 ?>
+
+
 </div>
