@@ -78,7 +78,7 @@ SELECT LGSID, UEP,
     {
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
-        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'UEP';
+        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'STZPRO_ST_TIME,UEP';
         $order = isset($_POST['order']) ? strval($_POST['order']) : 'ASC';
         
         $userOrganisasi=$this->session->get('userOrganisasi');
@@ -123,7 +123,7 @@ SELECT LGSID, UEP,
 
     public function dataListExcel()
     {   
-        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'UEP';
+        $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'STZPRO_ST_TIME,UEP';
         $order = isset($_POST['order']) ? strval($_POST['order']) : 'ASC';
         
 

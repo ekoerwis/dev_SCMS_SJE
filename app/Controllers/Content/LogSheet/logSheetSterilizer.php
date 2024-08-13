@@ -297,7 +297,7 @@ class logSheetSterilizer extends \App\Controllers\BaseController
 
         $mpdf = new \Mpdf\Mpdf([
             'mode' => 'utf-8', 
-            'format' => 'A4-P', 
+            'format' => 'A4-L', 
             'setAutoTopMargin' => 'stretch', 
             'setAutoBottomMargin' => 'stretch',
             'shrink_tables_to_fit'=>'false'
