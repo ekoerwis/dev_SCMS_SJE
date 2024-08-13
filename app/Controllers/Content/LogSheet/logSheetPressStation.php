@@ -168,15 +168,23 @@ class logSheetPressStation extends \App\Controllers\BaseController
         </table>
         ';
 
-        // <tr><td style="text-align:left;">Jam Kerja</td><td>:</td><td>{PAGENO} of {nbpg}</td></tr>
+
+        // $footerPdf = '<tr><td style="text-align:left;">Jam Kerja</td><td>:</td><td>{PAGENO} of {nbpg}</td></tr>';
 
         // dimatikan karena tidak tahu footernya apa
-        $mpdf->SetHTMLFooter($footerPdf);
+        // $mpdf->SetHTMLFooter($footerPdf);
 
         $mpdf->AddPage();
 
         $html = view('Content/LogSheet/logSheetPressStation/pdfView.php', $data);
         $mpdf->WriteHTML($html);
+
+        $mpdf->AddPage();
+
+
+        $html2 = view('Content/LogSheet/logSheetPressStation/pdfViewPage2.php', $data);
+        $mpdf->WriteHTML($html2);
+
         $this->response->setHeader('Content-Type', 'application/pdf');
         $mpdf->Output($data['Judul'].'.pdf', 'I'); // opens in browser
         //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
@@ -214,7 +222,7 @@ class logSheetPressStation extends \App\Controllers\BaseController
 
         $spreadsheet
         ->getActiveSheet()
-        ->getStyle('A5:AN7')
+        ->getStyle('A5:AT7')
         ->getBorders()
         ->getAllBorders()
         ->setBorderStyle(Border::BORDER_THIN);
@@ -235,11 +243,11 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $spreadsheet->getActiveSheet()->getColumnDimension('N')->setWidth(50, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('O')->setWidth(50, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('P')->setWidth(50, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('Q')->setWidth(90, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('R')->setWidth(90, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('S')->setWidth(90, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('T')->setWidth(90, 'px');
-        $spreadsheet->getActiveSheet()->getColumnDimension('U')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('Q')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('R')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('S')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('T')->setWidth(50, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('U')->setWidth(50, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('V')->setWidth(90, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('W')->setWidth(90, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('X')->setWidth(90, 'px');
@@ -259,10 +267,16 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $spreadsheet->getActiveSheet()->getColumnDimension('AL')->setWidth(90, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('AM')->setWidth(90, 'px');
         $spreadsheet->getActiveSheet()->getColumnDimension('AN')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AO')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AP')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AQ')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AR')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AS')->setWidth(90, 'px');
+        $spreadsheet->getActiveSheet()->getColumnDimension('AT')->setWidth(90, 'px');
 
-        $spreadsheet->getActiveSheet()->getStyle('A5:AN7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-        $spreadsheet->getActiveSheet()->getStyle('A5:AN7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
-        $spreadsheet->getActiveSheet()->getStyle('A5:AN7')->getFont()->setBold(true);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AT7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AT7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+        $spreadsheet->getActiveSheet()->getStyle('A5:AT7')->getFont()->setBold(true);
 
         $spreadsheet->getActiveSheet()->getStyle('F3:J3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
 
@@ -314,49 +328,55 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $sheet->setCellValue('K7', 'NO.5');        
 
         $sheet->mergeCells('L5:P6');
-        $sheet->setCellValue('L5', 'PRESS CONE PRESSURE (BAR)');
+        $sheet->setCellValue('L5', 'PRESS LOAD (AMP)');
         $sheet->setCellValue('L7', 'NO.1');
         $sheet->setCellValue('M7', 'NO.2');
         $sheet->setCellValue('N7', 'NO.3');
         $sheet->setCellValue('O7', 'NO.4');
-        $sheet->setCellValue('P7', 'NO.5');
+        $sheet->setCellValue('P7', 'NO.5'); 
 
-        $sheet->mergeCells('Q5:AN5');
-        $sheet->setCellValue('Q5', 'RUNNING HOUR');
+        $sheet->mergeCells('Q5:U6');
+        $sheet->setCellValue('Q5', 'POWER PACK PRESSURE (BAR)');
+        $sheet->setCellValue('Q7', 'NO.1');
+        $sheet->setCellValue('R7', 'NO.2');
+        $sheet->setCellValue('S7', 'NO.3');
+        $sheet->setCellValue('T7', 'NO.4');
+        $sheet->setCellValue('U7', 'NO.5');
 
-        $sheet->mergeCells('Q6:R6');
-        $sheet->setCellValue('Q6', 'PRESS NO.1');
-        $sheet->mergeCells('S6:T6');
-        $sheet->setCellValue('S6', 'PRESS NO.2');
-        $sheet->mergeCells('U6:V6');
-        $sheet->setCellValue('U6', 'PRESS NO.3');
+        $sheet->mergeCells('V5:V6');
+        $sheet->setCellValue('V5', 'DILUTION TANK');
+        $sheet->setCellValue('V7', 'TEMP (oC)');
+
+        $sheet->mergeCells('W5:AT5');
+        $sheet->setCellValue('W5', 'RUNNING HOUR');
+
         $sheet->mergeCells('W6:X6');
-        $sheet->setCellValue('W6', 'PRESS NO.4');
+        $sheet->setCellValue('W6', 'PRESS NO.1');
         $sheet->mergeCells('Y6:Z6');
-        $sheet->setCellValue('Y6', 'PRESS NO.5');
-
+        $sheet->setCellValue('Y6', 'PRESS NO.2');
         $sheet->mergeCells('AA6:AB6');
-        $sheet->setCellValue('AA6', 'DIGESTER NO.1');
+        $sheet->setCellValue('AA6', 'PRESS NO.3');
         $sheet->mergeCells('AC6:AD6');
-        $sheet->setCellValue('AC6', 'DIGESTER NO.2');
+        $sheet->setCellValue('AC6', 'PRESS NO.4');
         $sheet->mergeCells('AE6:AF6');
-        $sheet->setCellValue('AE6', 'DIGESTER NO.3');
-        $sheet->mergeCells('AG6:AH6');
-        $sheet->setCellValue('AG6', 'DIGESTER NO.4');
-        $sheet->mergeCells('AI6:AJ6');
-        $sheet->setCellValue('AI6', 'DIGESTER NO.5');
-        
-        $sheet->mergeCells('AK6:AL6');
-        $sheet->setCellValue('AK6', 'CBC NO.1');
-        $sheet->mergeCells('AM6:AN6');
-        $sheet->setCellValue('AM6', 'CBC NO.2');
+        $sheet->setCellValue('AE6', 'PRESS NO.5');
 
-        $sheet->setCellValue('Q7', 'START');
-        $sheet->setCellValue('R7', 'STOP');
-        $sheet->setCellValue('S7', 'START');
-        $sheet->setCellValue('T7', 'STOP');
-        $sheet->setCellValue('U7', 'START');
-        $sheet->setCellValue('V7', 'STOP');
+        $sheet->mergeCells('AG6:AH6');
+        $sheet->setCellValue('AG6', 'DIGESTER NO.1');
+        $sheet->mergeCells('AI6:AJ6');
+        $sheet->setCellValue('AI6', 'DIGESTER NO.2');
+        $sheet->mergeCells('AK6:AL6');
+        $sheet->setCellValue('AK6', 'DIGESTER NO.3');
+        $sheet->mergeCells('AM6:AN6');
+        $sheet->setCellValue('AM6', 'DIGESTER NO.4');
+        $sheet->mergeCells('AO6:AP6');
+        $sheet->setCellValue('AO6', 'DIGESTER NO.5');
+        
+        $sheet->mergeCells('AQ6:AR6');
+        $sheet->setCellValue('AQ6', 'CBC NO.1');
+        $sheet->mergeCells('AS6:AT6');
+        $sheet->setCellValue('AS6', 'CBC NO.2');
+
         $sheet->setCellValue('W7', 'START');
         $sheet->setCellValue('X7', 'STOP');
         $sheet->setCellValue('Y7', 'START');
@@ -375,6 +395,12 @@ class logSheetPressStation extends \App\Controllers\BaseController
         $sheet->setCellValue('AL7', 'STOP');
         $sheet->setCellValue('AM7', 'START');
         $sheet->setCellValue('AN7', 'STOP');
+        $sheet->setCellValue('AO7', 'START');
+        $sheet->setCellValue('AP7', 'STOP');
+        $sheet->setCellValue('AQ7', 'START');
+        $sheet->setCellValue('AR7', 'STOP');
+        $sheet->setCellValue('AS7', 'START');
+        $sheet->setCellValue('AT7', 'STOP');
 
 
 
@@ -390,7 +416,7 @@ class logSheetPressStation extends \App\Controllers\BaseController
         foreach ($data_parameter as $val) {
             $spreadsheet
             ->getActiveSheet()
-            ->getStyle('A8:AN' . $rows)
+            ->getStyle('A8:AT' . $rows)
             ->getBorders()
             ->getAllBorders()
             ->setBorderStyle(Border::BORDER_THIN);
@@ -398,45 +424,57 @@ class logSheetPressStation extends \App\Controllers\BaseController
             $numData++;
 
             $sheet->setCellValue('A' . $rows, $val['TIME_DISP']);
+
             $sheet->setCellValue('B' . $rows, $val['PRSDG_TMP1']);
             $sheet->setCellValue('C' . $rows, $val['PRSDG_TMP2']);
             $sheet->setCellValue('D' . $rows, $val['PRSDG_TMP3']);
             $sheet->setCellValue('E' . $rows, $val['PRSDG_TMP4']);
             $sheet->setCellValue('F' . $rows, $val['PRSDG_TMP5']);
+
             $sheet->setCellValue('G' . $rows, $val['PRSDG_AMP1']);
             $sheet->setCellValue('H' . $rows, $val['PRSDG_AMP2']);
             $sheet->setCellValue('I' . $rows, $val['PRSDG_AMP3']);
             $sheet->setCellValue('J' . $rows, $val['PRSDG_AMP4']);
             $sheet->setCellValue('K' . $rows, $val['PRSDG_AMP5']);
-            $sheet->setCellValue('L' . $rows, $val['PRSSP_CNP1']);
-            $sheet->setCellValue('M' . $rows, $val['PRSSP_CNP2']);
-            $sheet->setCellValue('N' . $rows, $val['PRSSP_CNP3']);
-            $sheet->setCellValue('O' . $rows, $val['PRSSP_CNP4']);
-            $sheet->setCellValue('P' . $rows, $val['PRSSP_CNP5']);
-            $sheet->setCellValue('Q' . $rows, $this->hmFormat($val['PRSSP_HMS1']));
-            $sheet->setCellValue('R' . $rows, $this->hmFormat($val['PRSSP_HME1']));
-            $sheet->setCellValue('S' . $rows, $this->hmFormat($val['PRSSP_HMS2']));
-            $sheet->setCellValue('T' . $rows, $this->hmFormat($val['PRSSP_HME2']));
-            $sheet->setCellValue('U' . $rows, $this->hmFormat($val['PRSSP_HMS3']));
-            $sheet->setCellValue('V' . $rows, $this->hmFormat($val['PRSSP_HME3']));
-            $sheet->setCellValue('W' . $rows, $this->hmFormat($val['PRSSP_HMS4']));
-            $sheet->setCellValue('X' . $rows, $this->hmFormat($val['PRSSP_HME4']));
-            $sheet->setCellValue('Y' . $rows, $this->hmFormat($val['PRSSP_HMS5']));
-            $sheet->setCellValue('Z' . $rows, $this->hmFormat($val['PRSSP_HME5']));
-            $sheet->setCellValue('AA' . $rows, $this->hmFormat($val['PRSDG_HMS1']));
-            $sheet->setCellValue('AB' . $rows, $this->hmFormat($val['PRSDG_HME1']));
-            $sheet->setCellValue('AC' . $rows, $this->hmFormat($val['PRSDG_HMS2']));
-            $sheet->setCellValue('AD' . $rows, $this->hmFormat($val['PRSDG_HME2']));
-            $sheet->setCellValue('AE' . $rows, $this->hmFormat($val['PRSDG_HMS3']));
-            $sheet->setCellValue('AF' . $rows, $this->hmFormat($val['PRSDG_HME3']));
-            $sheet->setCellValue('AG' . $rows, $this->hmFormat($val['PRSDG_HMS4']));
-            $sheet->setCellValue('AH' . $rows, $this->hmFormat($val['PRSDG_HME4']));
-            $sheet->setCellValue('AI' . $rows, $this->hmFormat($val['PRSDG_HMS5']));
-            $sheet->setCellValue('AJ' . $rows, $this->hmFormat($val['PRSDG_HME5']));
-            $sheet->setCellValue('AK' . $rows, $this->hmFormat($val['PRSCB_HMS1']));
-            $sheet->setCellValue('AL' . $rows, $this->hmFormat($val['PRSCB_HME1']));
-            $sheet->setCellValue('AM' . $rows, $this->hmFormat($val['PRSCB_HMS2']));
-            $sheet->setCellValue('AN' . $rows, $this->hmFormat($val['PRSCB_HME2']));
+
+            $sheet->setCellValue('L' . $rows, $val['PRSLD_AMP1']);
+            $sheet->setCellValue('M' . $rows, $val['PRSLD_AMP2']);
+            $sheet->setCellValue('N' . $rows, $val['PRSLD_AMP3']);
+            $sheet->setCellValue('O' . $rows, $val['PRSLD_AMP4']);
+            $sheet->setCellValue('P' . $rows, $val['PRSLD_AMP5']);
+
+            $sheet->setCellValue('Q' . $rows, $val['PRSSP_CNP1']);
+            $sheet->setCellValue('R' . $rows, $val['PRSSP_CNP2']);
+            $sheet->setCellValue('S' . $rows, $val['PRSSP_CNP3']);
+            $sheet->setCellValue('T' . $rows, $val['PRSSP_CNP4']);
+            $sheet->setCellValue('U' . $rows, $val['PRSSP_CNP5']);
+
+            $sheet->setCellValue('V' . $rows, $val['DLTN_TEMP']);
+
+            $sheet->setCellValue('W' . $rows, $this->hmFormat($val['PRSSP_HMS1']));
+            $sheet->setCellValue('X' . $rows, $this->hmFormat($val['PRSSP_HME1']));
+            $sheet->setCellValue('Y' . $rows, $this->hmFormat($val['PRSSP_HMS2']));
+            $sheet->setCellValue('Z' . $rows, $this->hmFormat($val['PRSSP_HME2']));
+            $sheet->setCellValue('AA' . $rows, $this->hmFormat($val['PRSSP_HMS3']));
+            $sheet->setCellValue('AB' . $rows, $this->hmFormat($val['PRSSP_HME3']));
+            $sheet->setCellValue('AC' . $rows, $this->hmFormat($val['PRSSP_HMS4']));
+            $sheet->setCellValue('AD' . $rows, $this->hmFormat($val['PRSSP_HME4']));
+            $sheet->setCellValue('AE' . $rows, $this->hmFormat($val['PRSSP_HMS5']));
+            $sheet->setCellValue('AF' . $rows, $this->hmFormat($val['PRSSP_HME5']));
+            $sheet->setCellValue('AG' . $rows, $this->hmFormat($val['PRSDG_HMS1']));
+            $sheet->setCellValue('AH' . $rows, $this->hmFormat($val['PRSDG_HME1']));
+            $sheet->setCellValue('AI' . $rows, $this->hmFormat($val['PRSDG_HMS2']));
+            $sheet->setCellValue('AJ' . $rows, $this->hmFormat($val['PRSDG_HME2']));
+            $sheet->setCellValue('AK' . $rows, $this->hmFormat($val['PRSDG_HMS3']));
+            $sheet->setCellValue('AL' . $rows, $this->hmFormat($val['PRSDG_HME3']));
+            $sheet->setCellValue('AM' . $rows, $this->hmFormat($val['PRSDG_HMS4']));
+            $sheet->setCellValue('AN' . $rows, $this->hmFormat($val['PRSDG_HME4']));
+            $sheet->setCellValue('AO' . $rows, $this->hmFormat($val['PRSDG_HMS5']));
+            $sheet->setCellValue('AP' . $rows, $this->hmFormat($val['PRSDG_HME5']));
+            $sheet->setCellValue('AQ' . $rows, $this->hmFormat($val['PRSCB_HMS1']));
+            $sheet->setCellValue('AR' . $rows, $this->hmFormat($val['PRSCB_HME1']));
+            $sheet->setCellValue('AS' . $rows, $this->hmFormat($val['PRSCB_HMS2']));
+            $sheet->setCellValue('AT' . $rows, $this->hmFormat($val['PRSCB_HME2']));
 
 
             $rows++;

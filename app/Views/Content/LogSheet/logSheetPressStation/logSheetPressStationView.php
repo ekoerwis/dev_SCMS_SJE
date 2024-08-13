@@ -29,7 +29,9 @@
             <tr>
                 <th colspan="5" rowspan="2"><b>DIGESTER MASS TEMP ( <span>&#176;</span>C )</b></th>
                 <th colspan="5" rowspan="2"><b>DIGESTER LOAD (AMP)</b></th>
-                <th colspan="5" rowspan="2"><b>PRESS CONE PRESSURE (BAR)</b></th>
+                <th colspan="5" rowspan="2"><b>PRESS LOAD (AMP)</b></th>
+                <th colspan="5" rowspan="2"><b>POWER PACK PRESSURE (BAR)</b></th>
+                <th rowspan="2"><b>DILUTION TANK</b></th>
                 <th colspan="24"><b>RUNNING HOUR</b></th>
             </tr>
             <tr>
@@ -58,18 +60,29 @@
                 <th field="PRSDG_TMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
                 <th field="PRSDG_TMP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
                 <!-- <th field="PRSDG_TMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
-                <!-- <th field="PRSDG_TMP_AVG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AVG</b></th> -->
+                
                 <th field="PRSDG_AMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
                 <th field="PRSDG_AMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
                 <th field="PRSDG_AMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
                 <th field="PRSDG_AMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
                 <th field="PRSDG_AMP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
+
+                <!-- <th field="PRSDG_TMP_AVG" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>AVG</b></th> -->
+                <th field="PRSLD_AMP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
+                <th field="PRSLD_AMP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
+                <th field="PRSLD_AMP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
+                <th field="PRSLD_AMP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
+                <th field="PRSLD_AMP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
                 <!-- <th field="PRSDG_AMP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
                 <th field="PRSSP_CNP1" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.1</b></th>
                 <th field="PRSSP_CNP2" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.2</b></th>
                 <th field="PRSSP_CNP3" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.3</b></th>
                 <th field="PRSSP_CNP4" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.4</b></th>
-                <th field="PRSSP_CNP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th>
+                <th field="PRSSP_CNP5" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.5</b></th> 
+
+
+                <th field="DLTN_TEMP" halign="center" data-options="sortable:false,width:120,align:'center' " formatter="formatNumberColumnCostum"><b>Temp ( <span>&#176;</span>C )</b></th>
+
                 <!-- <th field="PRSSP_CNP6" halign="center" data-options="sortable:false,width:60,align:'center' " formatter="formatNumberColumnCostum"><b>NO.6</b></th> -->
                 <th field="PRSSP_HMS1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>START</b></th>
                 <th field="PRSSP_HME1" halign="center" data-options="sortable:false,width:100,align:'right' " formatter="hmFormat"><b>STOP</b></th>

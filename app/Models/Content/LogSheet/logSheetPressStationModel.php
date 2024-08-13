@@ -49,7 +49,8 @@ class logSheetPressStationModel extends \App\Models\BaseModel
         PRSCB_HMS1, PRSCB_HMS2, PRSCB_HMS3, PRSCB_HME1, PRSCB_HME2, PRSCB_HME3, 
         PRSCB_HMP1, PRSCB_HMP2, PRSCB_HMP3, 
         PRSCB_SRT1, PRSCB_SRT2, PRSCB_SRT3, 
-        PRSCB_END1, PRSCB_END2, PRSCB_END3
+        PRSCB_END1, PRSCB_END2, PRSCB_END3,
+        0 DLTN_TEMP, 0 PRSLD_AMP1, 0 PRSLD_AMP2, 0 PRSLD_AMP3, 0 PRSLD_AMP4, 0 PRSLD_AMP5
         FROM POM_LGS_PRS WHERE POSTDT = TO_DATE('$tdate','dd/mon/yyyy') ORDER BY SEQ";
 
         return $sql;
@@ -127,6 +128,7 @@ class logSheetPressStationModel extends \App\Models\BaseModel
         PRSCB_HMP1, PRSCB_HMP2, PRSCB_HMP3, 
         PRSCB_SRT1, PRSCB_SRT2, PRSCB_SRT3, 
         PRSCB_END1, PRSCB_END2, PRSCB_END3, 
+        DLTN_TEMP, PRSLD_AMP1, PRSLD_AMP2, PRSLD_AMP3, PRSLD_AMP4, PRSLD_AMP5,
         ROWNUM AS RNUM FROM ( $mainSql ORDER BY $sort $order) WHERE ROWNUM <= $limit) WHERE RNUM > $offset";
         
         $sql = $this->db->query($sql)->getResultArray();
