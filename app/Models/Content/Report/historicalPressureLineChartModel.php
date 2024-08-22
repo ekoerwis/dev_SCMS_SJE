@@ -20,7 +20,8 @@ class historicalPressureLineChartModel extends \App\Models\BaseModel
         $div_id = intval($DIVID);
         // $dt_add = 'PSPV'.$div_id.'1';
 
-        $sql = "SELECT PERIODE, TM, ROUND_TM, LAG_TM, SUM(TEMP) TEMP, SUM(BAR) BAR,  SUM(AMP) AMP
+        $sql = "SELECT A.*, B.MIN MIN_BAR, B.MAX MAX_BAR, C.MIN MIN_AMP, C.MAX MAX_AMP, D.MIN MIN_TEMP, D.MAX MAX_TEMP from 
+        ( SELECT PERIODE, TM, ROUND_TM, LAG_TM, SUM(TEMP) TEMP, SUM(BAR) BAR,  SUM(AMP) AMP
                 FROM
                 (SELECT  PERIODE,
                     TM,
@@ -77,7 +78,10 @@ class historicalPressureLineChartModel extends \App\Models\BaseModel
                 WHERE ROUND_TM <> LAG_TM
                 )
                 GROUP BY PERIODE, TM, ROUND_TM, LAG_TM
-                ORDER BY PERIODE, TM
+                ORDER BY PERIODE, TM) A,
+                (select * from parametervalue where parametercode='SCADA' and parametervaluecode = 'PRPRES01') B,
+                (select * from parametervalue where parametercode='SCADA' and parametervaluecode = 'PRAMPR02') C,
+                (select * from parametervalue where parametercode='SCADA' and parametervaluecode = 'PRTEMP01') D
 ";
         
         $result = $this->db->query($sql)->getResultArray();
